@@ -2,7 +2,7 @@
 
 Criamos os arquivos de forma componetizada para facilitar a organização do grupo, segundo os detalhes mostrados no fluxograma.
 Serão criadas cinco páginas no total: Home, Cadastro de Serviço, Detalhes do Serviço, Lista de Serviços e Carrinho. 
-A paleta de cores escolhida pelo time foi a mostrada no link (https://coolors.co/palette/ef476f-ffd166-06d6a0-118ab2-073b4c) de acordo com o tema escolhido pelo cliente.
+A paleta de cores escolhida pelo time foi a mostrada no link ao lado (https://coolors.co/palette/ef476f-ffd166-06d6a0-118ab2-073b4c) de acordo com o tema escolhido pelo cliente.
 
 A página da Home conta com:
  - Botão de Cadastro de Serviços;
