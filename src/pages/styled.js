@@ -15,7 +15,7 @@ border:solid black 2px;
 `
 export const ImagemHeader = styled.img`
 height:80%;
-width:70px;
+/* width:80px; */
 margin-top:6px;
 margin-left:10px;
 `
