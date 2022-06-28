@@ -28,9 +28,9 @@ A página do Carrinho conta com:
 - Possibilidade de deletar serviço escolhido
  
  Segue o pdf contendo o fluxograma das páginas e esboço das páginas.
- 
+ <center>
 [LabeNinjas.drawio.pdf](https://github.com/future4code/Ailton-labe-ninja8/files/9001459/LabeNinjas.drawio.pdf)
-
+</center>
 Trabalho realizado por:
 - João Gabriel Sales
 - Mayara Costa
