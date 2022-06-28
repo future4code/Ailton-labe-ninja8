@@ -1,4 +1,7 @@
-|| Projeto LabeNinjas {Inserir Logo Criado Aqui Depois} 
+|| Projeto LabeNinjas 
+
+![image](https://user-images.githubusercontent.com/102835599/176256754-a3a22cf1-c028-459b-bc36-66c74bfa3dd5.png)
+
 
 Criamos os arquivos de forma componetizada para facilitar a organização do grupo, segundo os detalhes mostrados no fluxograma.
 Serão criadas cinco páginas no total: Home, Cadastro de Serviço, Detalhes do Serviço, Lista de Serviços e Carrinho. 
