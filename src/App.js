@@ -63,44 +63,62 @@ export default class App extends Component {
   };
 
   createJob = async () => {
-    if (new Date().toISOString().slice(0, 10) <= this.state.dueDateInput) {
-      try {
-        let arrayConvertido = []
-        if (this.state.paymentMethods[0] === true) {
-          arrayConvertido.push('Pix')
+    if (this.state.inputTitle.trim() !== '') {
+      if (this.state.inputDescription.trim() !== '') {
+        if (this.state.inputPrice.trim() !== '') {
+          if (this.state.paymentMethods.indexOf(true, 0) !== -1) {
+            if (new Date().toISOString().slice(0, 10) <= this.state.dueDateInput) {
+              try {
+                let arrayConvertido = []
+                if (this.state.paymentMethods[0] === true) {
+                  arrayConvertido.push('Pix')
+                }
+                if (this.state.paymentMethods[1] === true) {
+                  arrayConvertido.push('Debito')
+                }
+                if (this.state.paymentMethods[2] === true) {
+                  arrayConvertido.push('Credito')
+                }
+                if (this.state.paymentMethods[3] === true) {
+                  arrayConvertido.push('Boleto')
+                }
+                if (this.state.paymentMethods[4] === true) {
+                  arrayConvertido.push('PayPal')
+                }
+
+                const body = {
+                  title: this.state.inputTitle,
+                  description: this.state.inputDescription,
+                  price: Number(this.state.inputPrice),
+                  paymentMethods: arrayConvertido,
+                  dueDate: this.state.dueDateInput,
+                };
+                await axios.post(this.state.baseURL + "/jobs", body, {
+                  headers: {
+                    Authorization: this.state.keyAPI,
+                  },
+                });
+                this.gelAllJobs()
+                alert('serviço criado com sucesso')
+              } catch (error) {
+                console.log(error.message);
+              }
+            } else {
+              alert('escolha uma data igual ou posterior ao dia atual')
+            }
+          } else {
+            console.log('escolha uma forma de pagamento')
+          }
+        } else {
+          console.log('preencha o campo do preço')
         }
-        if (this.state.paymentMethods[1] === true) {
-          arrayConvertido.push('Debito')
-        }
-        if (this.state.paymentMethods[2] === true) {
-          arrayConvertido.push('Credito')
-        }
-        if (this.state.paymentMethods[3] === true) {
-          arrayConvertido.push('Boleto')
-        }
-        if (this.state.paymentMethods[4] === true) {
-          arrayConvertido.push('PayPal')
-        }
-        const body = {
-          title: this.state.inputTitle,
-          description: this.state.inputDescription,
-          price: Number(this.state.inputPrice),
-          paymentMethods: arrayConvertido,
-          dueDate: this.state.dueDateInput,
-        };
-        await axios.post(this.state.baseURL + "/jobs", body, {
-          headers: {
-            Authorization: this.state.keyAPI,
-          },
-        });
-        this.gelAllJobs()
-        alert('serviço criado com sucesso')
-      } catch (error) {
-        console.log(error.message);
+      } else {
+        console.log('preencha o campo da descrição')
       }
     } else {
-      alert('escolha uma data igual ou posterior ao dia atual')
+      console.log('preecha o campo do titulo')
     }
+
   };
 
   deleteJob = async (id) => {
@@ -135,16 +153,14 @@ export default class App extends Component {
   };
 
   ////////// API //////////
+
   /// Funções onChange ///
 
-  // paymentMethods: [],
-
-
   onChangeTitle = (e) => {
-    this.setState({ inputTitle: e.target.value })
+    this.setState({ inputTitle: e.target.value.trim() })
   }
   onChangeDescription = (e) => {
-    this.setState({ inputDescription: e.target.value })
+    this.setState({ inputDescription: e.target.value.trim() })
   }
   onChangePrice = (e) => {
     this.setState({ inputPrice: e.target.value })
@@ -154,6 +170,7 @@ export default class App extends Component {
   }
 
   /// Funções onChange ///
+
   /// Funções onClick ///
 
   onClickPayments = (index) => {
@@ -164,9 +181,7 @@ export default class App extends Component {
 
   /// Funções onClick ///
 
-
   render() {
-
     return (
       <div>
         <MudaTela
