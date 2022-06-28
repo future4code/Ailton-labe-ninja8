@@ -1,8 +1,6 @@
-
+import { style } from "@mui/system";
 import styled from "styled-components";
 import { CorRosa, CorVerde, CorAmarelo, AzulClaro, AzulEscuro } from "../constants/cores";
-
-
 
 
 export const ContainerPage = styled.div`
@@ -17,12 +15,18 @@ height:10vh;
 
 `
 export const ImagemHeader = styled.img`
-height:60%;
+height:80%;
 /* width:80px; */
-margin-top:17px;
+margin-top:6px;
 margin-left:10px;
 `
 
+
+export const HeaderHome = styled.div`
+width:100%;
+height:100%;
+ background-color:${CorRosa}; 
+`
 
 export const Main =styled.main`
 width:100%;
@@ -31,39 +35,34 @@ height:80vh;
 `
 export const MainHome =styled.main`
 width:100%;
-height:100vh;
-background-color:#b9fbc0;
+height:90vh;
 display: flex;
 flex-direction: row;
 justify-content: center;
 align-items: center;
+/* border:solid blue 2px; */
 `
- 
-export const Servico = styled.img`
-margin-top:220px;
-height: 200px;
-width:200px;
-border-radius: 10px;
-transition: 0.7s;
-:hover{
-    border-radius:100px;
-    transition: 0.7s;
-}
-`
-
-export const ButtonServ = styled.button `
-margin-left: 20px;
-width: 185px;
-height: 115px;
+export const ButtonAdd = styled.button `
+background-color: ${CorVerde};
+margin-right: 20px;
+width: 150px;
+height: 100px;
 border: none;
 border-radius: 5px;
 font-weight: bold;
-font-size: 18px;
-background: -webkit-linear-gradient(360deg,#EF476F,#FFD166,#06D6A0,#118AB2,#073B4C);
-p{
-    color:white;
-text-shadow: 1.5px 1.5px 2px black;
-  }
+font-size: 15px;
+color: ${AzulEscuro};
+`
+export const ButtonServ = styled.button `
+background-color: ${AzulClaro};
+margin-left: 20px;
+width: 150px;
+height: 100px;
+border: none;
+border-radius: 5px;
+font-weight: bold;
+font-size: 15px;
+color: ${CorAmarelo};
 `
 
 export const HomeButton = styled.button `

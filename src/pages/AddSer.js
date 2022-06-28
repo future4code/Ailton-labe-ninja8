@@ -12,7 +12,7 @@ export const AddSer = (props) => {
                 <div>
                     <h1>Adiciona Serviço</h1>
                     <HomeButton onClick={props.goHome}>Home</HomeButton>
-                    <ServButton onClick={props.goContrataSer}>Serviços</ServButton>
+                    <ServButton onClick={props.goContrataSer}>Serviços </ServButton>
                 </div>
                 <div>
                     <InputServ onChange={props.onChangeTitle} placeholder={'Titulo'} />

@@ -7,21 +7,26 @@ import {
   ImagemHeader,
   ButtonAdd,
   ButtonServ,
-  Servico,
 } from "./styled";
 import oi from "../assets/logoHeader1.png";
 import Logo from "../assets/logo.pageHome.png";
-import servico from "../assets/Adicionar-Serviço.png"
-import contratar from "../assets/Contratar-Serviço.png"
 
 
 export const Home = (props) => {
   return (
     <ContainerPage>
+      <Header>
+        <HeaderHome>
+          <ImagemHeader src={oi} />
+        </HeaderHome>
+      </Header>
       <MainHome>
-             <Servico  onClick={props.goAddSer} src={servico}/>
+        <ButtonAdd onClick={props.goAddSer}
+        bgGradiant='linear(to-l, #7928CA, #FF0080)'
+        bgClip='text'>
+            Adicionar Serviço </ButtonAdd>
         <img src={Logo} />
-        <Servico src={contratar} onClick={props.goContrataSer}/>
+        <ButtonServ onClick={props.goContrataSer}>Contratar Serviço</ButtonServ>
       </MainHome>
     </ContainerPage>
   );
