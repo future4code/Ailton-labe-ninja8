@@ -37,7 +37,7 @@ export default class MudaTela extends React.Component {
         break;
       case "AddSer":
         return <AddSer goHome={this.goHome}
-        goContrataSer={this.props.goContrataSer}
+        goContrataSer={this.goContrataSer}
         createJob={this.props.createJob}
         onChangeTitle={this.props.onChangeTitle}
         onChangeDescription={this.props.onChangeDescription}
