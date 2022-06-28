@@ -9,8 +9,13 @@ export const ContrataSer =(props)=>{
     <ContainerPage>
         <Header>Eu sou o header do Contrata Serviço </Header>
         <Main>
+            <div>
         <h1>Contrata Serviço</h1>
             <button onClick={props.goHome}>Home</button>
+            </div>
+            <div>
+                
+            </div>
         </Main>
         <Footer/>
     </ContainerPage>
