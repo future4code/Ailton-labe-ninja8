@@ -44,6 +44,7 @@ margin-top:220px;
 height: 200px;
 width:200px;
 border-radius: 10px;
+cursor: pointer;
 transition: 0.7s;
 :hover{
     border-radius:100px;
