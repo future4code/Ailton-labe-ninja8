@@ -1,6 +1,6 @@
 import React from "react";
 import { ContainerPage } from "./styled";
-import { Header } from "./styled";
+import { Header, HomeButton, ServButton, InputServ, InputServTres, InputServDois } from "./styled";
 import { Main } from "./styled";
 import { Footer } from "../components/Footer";
 
@@ -11,13 +11,13 @@ export const AddSer = (props) => {
             <Main>
                 <div>
                     <h1>Adiciona Serviço</h1>
-                    <button onClick={props.goHome}>Home</button>
-                    <button onClick={props.goContrataSer}>Serviços </button>
+                    <HomeButton onClick={props.goHome}>Home</HomeButton>
+                    <ServButton onClick={props.goContrataSer}>Serviços </ServButton>
                 </div>
                 <div>
-                    <input onChange={props.onChangeTitle} placeholder={'Titulo'} />
-                    <input onChange={props.onChangeDescription} placeholder={'Descrição do serviço'} />
-                    <input onChange={props.onChangePrice} type={'number'} min={0} placeholder={'Preço'} />
+                    <InputServ onChange={props.onChangeTitle} placeholder={'Titulo'} />
+                    <InputServDois onChange={props.onChangeDescription} placeholder={'Descrição do serviço'} />
+                    <InputServTres onChange={props.onChangePrice} type={'number'} min={0} placeholder={'Preço'} />
                     <div>
                         <h4>Formas de pagamento</h4>
                         <p onClick={() => props.onClickPayments(0)}>Pix</p>
