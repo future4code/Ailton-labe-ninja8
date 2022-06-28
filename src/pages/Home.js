@@ -1,12 +1,15 @@
 import React from "react";
-import { ContainerPage } from "./styled";
-import { Header } from "./styled";
-import { MainHome } from "./styled";
+import { MainHome, HeaderHome, Header, ContainerPage, ImagemHeader } from "./styled";
+import oi from "../assets/logoHeader1.png"
 
 export const Home =(props)=>{
     return(
     <ContainerPage>
-        <Header>Eu sou o header da home</Header>
+        <Header>
+            <HeaderHome>
+                <ImagemHeader src={oi} />
+                  </HeaderHome>
+            </Header>
         <MainHome>
             <h1>Eu sou a Home</h1>
             <button onClick={props.goAddSer}>Adicionar Serviço</button>
