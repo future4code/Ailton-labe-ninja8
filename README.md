@@ -1,70 +1,27 @@
-# Getting Started with Create React App
+|| Projeto LabeNinjas 
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
-## Available Scripts
-
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Criamos os arquivos de forma componetizada para facilitar a organização do grupo, segundo os detalhes mostrados no fluxograma.
+Serão criadas cinco páginas no total: Home, Cadastro de Serviço, Detalhes do Serviço, Lista de Serviços e Carrinho. 
+A paleta de cores escolhida pelo time foi a mostrada no link (https://coolors.co/palette/ef476f-ffd166-06d6a0-118ab2-073b4c) de acordo com o tema escolhido pelo cliente.
+A página da Home conta com:
+ > Botão de Cadastro de Serviços
+ > Botão de Lista de Serviços
+ > Logo da Marca
+A página de Cadastro de Serviços conta com:
+ > Box de inputs para inserir as inforações a serem oferecidas, formas de pagamento aceitas, e data de disponibilidade do serviço
+ > Link direto para a lista de serviços oferecidos
+A página de Serviços Oferecidos conta com:
+ > Cards em listas, mostrando todos os serviços cadastrados
+ > Link direto para o Carrinho e Detalhes de cada serviço
+A página de Detalhes do Serviço conta com:
+ > Descrição fornecida do serviço, formas de pagamento aceitas, disponibilidade do serviço
+A página do Carrinho conta com:
+ > Box com serviços escolhidos
+ > Valor unitário
+ > Valor total da compra (Caso mais de um serviço seja escolhido)
+ > Confirmação de compra
+ > Possibilidade de deletar serviço escolhido
+ 
+ Segue o pdf contendo o fluxograma das páginas e esboço das páginas.
+ 
+[LabeNinjas.drawio.pdf](https://github.com/future4code/Ailton-labe-ninja8/files/9001459/LabeNinjas.drawio.pdf)
