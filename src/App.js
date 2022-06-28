@@ -7,7 +7,17 @@ export default class App extends Component {
     keyAPI: "f17d0c39-2a4f-4086-a826-ec2038594148",
     baseURL: "https://labeninjas.herokuapp.com",
     allJobs: [],
+    inputTitle: "",
+    inputDescription: "",
+    inputPrice: "",
+    paymentMethods: [false, false, false, false, false],
+    dueDateInput: "",
   };
+
+  componentDidMount() {
+    this.gelAllJobs()
+
+  }
 
   ////////// API //////////
 
@@ -30,6 +40,7 @@ export default class App extends Component {
           Authorization: this.state.keyAPI,
         },
       });
+      console.log(response)
       this.setState({
         allJobs: response.data.jobs,
       });
@@ -52,21 +63,43 @@ export default class App extends Component {
   };
 
   createJob = async () => {
-    try {
-      const body = {
-        title: "",
-        description: "",
-        price: "",
-        paymentMethods: "",
-        dueDate: "",
-      };
-      await axios.post(this.state.baseURL + "/jobs", body, {
-        headers: {
-          Authorization: this.state.keyAPI,
-        },
-      });
-    } catch (error) {
-      console.log(error.message);
+    if (new Date().toISOString().slice(0, 10) <= this.state.dueDateInput) {
+      try {
+        let arrayConvertido = []
+        if (this.state.paymentMethods[0] === true) {
+          arrayConvertido.push('Pix')
+        }
+        if (this.state.paymentMethods[1] === true) {
+          arrayConvertido.push('Debito')
+        }
+        if (this.state.paymentMethods[2] === true) {
+          arrayConvertido.push('Credito')
+        }
+        if (this.state.paymentMethods[3] === true) {
+          arrayConvertido.push('Boleto')
+        }
+        if (this.state.paymentMethods[4] === true) {
+          arrayConvertido.push('PayPal')
+        }
+        const body = {
+          title: this.state.inputTitle,
+          description: this.state.inputDescription,
+          price: Number(this.state.inputPrice),
+          paymentMethods: arrayConvertido,
+          dueDate: this.state.dueDateInput,
+        };
+        await axios.post(this.state.baseURL + "/jobs", body, {
+          headers: {
+            Authorization: this.state.keyAPI,
+          },
+        });
+        this.gelAllJobs()
+        alert('serviço criado com sucesso')
+      } catch (error) {
+        console.log(error.message);
+      }
+    } else {
+      alert('escolha uma data igual ou posterior ao dia atual')
     }
   };
 
@@ -102,10 +135,52 @@ export default class App extends Component {
   };
 
   ////////// API //////////
+  /// Funções onChange ///
+
+  // paymentMethods: [],
+
+
+  onChangeTitle = (e) => {
+    this.setState({ inputTitle: e.target.value })
+  }
+  onChangeDescription = (e) => {
+    this.setState({ inputDescription: e.target.value })
+  }
+  onChangePrice = (e) => {
+    this.setState({ inputPrice: e.target.value })
+  }
+  onChangeDate = (e) => {
+    this.setState({ dueDateInput: e.target.value })
+  }
+
+  /// Funções onChange ///
+  /// Funções onClick ///
+
+  onClickPayments = (index) => {
+    let array = [...this.state.paymentMethods]
+    array[index] = !array[index]
+    this.setState({ paymentMethods: array })
+  }
+
+  /// Funções onClick ///
+
+
   render() {
+
     return (
       <div>
-        <MudaTela/>
+        <MudaTela
+          createJob={this.createJob}
+          onChangeTitle={this.onChangeTitle}
+          onChangeDescription={this.onChangeDescription}
+          onChangePrice={this.onChangePrice}
+          onChangeDate={this.onChangeDate}
+          inputTitle={this.state.inputTitle}
+          inputDescription={this.state.inputDescription}
+          inputPrice={this.state.inputPrice}
+          paymentMethods={this.state.paymentMethods}
+          onClickPayments={this.onClickPayments}
+        />
       </div>
     );
   }
