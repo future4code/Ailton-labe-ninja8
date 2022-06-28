@@ -35,4 +35,4 @@ Trabalho realizado por:
 - João Gabriel Sales
 - Mayara Costa
 - Myllena Moreira
-- Paulo Correia da Silva
+- Paulo Henrique Correa da Silva
