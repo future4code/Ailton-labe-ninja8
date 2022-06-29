@@ -54,7 +54,16 @@ export default class MudaTela extends React.Component {
       case "ContrataSer":
         return <ContrataSer goHome={this.goHome}  goCarrinho={this.goCarrinho}
          goDetalheSer={this.goDetalheSer}   allJobs={this.props.allJobs}
-        adicionarCarrinho={this.props.adicionarCarrinho} />;
+        adicionarCarrinho={this.props.adicionarCarrinho} 
+        onChangeSearch={this.props.onChangeSearch}
+          inputSearch={this.props.inputSearch}
+          onChangeMin={this.props.onChangeMin}
+          inputMin={this.props.inputMin}
+          onChangeMax={this.props.onChangeMax}
+          inputMax={this.props.inputMax}
+          onChangeSelect={this.props.onChangeSelect}
+          limparCampos={this.props.limparCampos}
+          />;
         break;
       case "DetalheSer":
         return <DetalheSer goHome={this.goHome}  goCarrinho={this.goCarrinho}

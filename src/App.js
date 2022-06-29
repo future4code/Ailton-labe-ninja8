@@ -16,9 +16,8 @@ export default class App extends Component {
     paymentMethods: [false, false, false, false, false],
     dueDateInput: "",
     inputSearch: "",
-    inputMin: 0,
+    inputMin: "",
     inputMax: Infinity,
-    inputSelect: "",
     carrinho: [],
   };
 
@@ -184,11 +183,33 @@ export default class App extends Component {
     this.setState({inputMin: e.target.value})
   }
   onChangeMax = (e) => {
-    this.setState({inputMax: e.target.value})
+    if (e.target.value !== "") {
+      this.setState({inputMax: e.target.value})
+    } else {
+      this.setState({inputMax: Infinity})
+    }
   }
   onChangeSelect = (e) => {
-    this.setState({inputSelect: e.target.value})
+    if (e.target.value === "Crescente") {
+      this.setState({allJobs: this.state.allJobs.sort((a, b) => {
+       return a.price - b.price
+      })})
+    } 
+    if (e.target.value === "Decrescente") {
+      this.setState({allJobs: this.state.allJobs.sort((a, b) => {
+       return b.price - a.price
+      })})
+    }
+    if (e.target.value === "Prazos") {
+      this.setState({allJobs: this.state.allJobs.sort((a, b) => {
+       return new Date(a.dueDate.slice(0, 10)) - new Date( b.dueDate.slice(0,10))
+      })})
+    }
+    if (e.target.value === "Serviços") {
+      this.gelAllJobs()
+    }
   }
+
   /// Funções onChange ///
 
   /// Funções onClick ///
@@ -204,7 +225,13 @@ export default class App extends Component {
   novoCarrinho.push(item)
   this.setState({carrinho:novoCarrinho})
  }
-
+ limparCampos =() => {
+  this.setState({
+    inputSearch: "",
+    inputMin:"",
+    inputMax: Infinity,
+  })
+ }
 
   /// Funções onClick ///
 
@@ -233,6 +260,7 @@ export default class App extends Component {
           allJobs={this.state.allJobs}
           adicionarCarrinho={this.adicionarCarrinho}
           carrinho={this.state.carrinho}
+          limparCampos={this.limparCampos}
         />
       </div>
     );

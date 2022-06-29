@@ -7,7 +7,14 @@ import { Card } from "../components/Card";
 
 export const ContrataSer =(props)=>{
     console.log(props.allJobs)
-    const MostraCard = props.allJobs.map((item)=>{
+    console.log(props.inputSearch)
+    const MostraCard = props.allJobs.filter((item) => { 
+        if (item.title.toLowerCase().includes(props.inputSearch.toLowerCase())
+        && item.price >= props.inputMin && item.price <= props.inputMax
+        ) {
+            return item
+        }
+    }).map((item)=>{
         return(
         <Card key={item.id}  servico={item}
         // title={item.title} price={item.price} dueDate={item.dueDate}
@@ -15,11 +22,14 @@ export const ContrataSer =(props)=>{
         adicionarCarrinho={props.adicionarCarrinho}
         />
         )
-    })
+
+    }) 
+    console.log({MostraCard})
     return(
     <ContainerPageSer>
-        <Header> <button onClick={props.goHome}>Home</button> </Header>
-       
+        <Header> <button onClick={props.goHome}>Home</button>
+        <button onClick={props.goCarrinho}>Carrinho</button>
+        </Header>
         <Main>
             <div>
         <h1>Contrata Serviço</h1>
@@ -33,10 +43,13 @@ export const ContrataSer =(props)=>{
            onChange={props.onChangeMax}  value={props.inputMax}
           />
         <select onChange={props.onChangeSelect}>
+            <option selected disabled value={""}>Ordenação</option>
+            <option >Serviços</option>
             <option>Crescente</option>
             <option>Decrescente</option>
             <option>Prazos</option>
         </select>
+            <button onClick={props.limparCampos}>Limpar Campos</button>
             </div>
         
 

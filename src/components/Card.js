@@ -12,7 +12,7 @@ export const Card = (props) => {
      <div>
         <button onClick={()=>{props.adicionarCarrinho(props.servico)}}>Adicionar ao Carrinho</button>
         <button onClick={()=>{props.goDetalheSer(props.servico)}}>Ver detalhes</button>
-        <button onClick={props.goCarrinho}>Carrinho</button>
+        
      </div>
     </div>
   )
