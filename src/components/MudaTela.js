@@ -9,6 +9,7 @@ import { Home } from "../pages/Home";
 export default class MudaTela extends React.Component {
   state = {
     tela: "Home",
+    produtoSelecionado:{},
   };
 
   goHome = () => {
@@ -21,8 +22,8 @@ export default class MudaTela extends React.Component {
   goContrataSer = () => {
     this.setState({ tela: "ContrataSer" });
   };
-  goDetalheSer = () => {
-    this.setState({ tela: "DetalheSer" });
+  goDetalheSer = (valor) => {
+    this.setState({ tela: "DetalheSer", produtoSelecionado:valor });
   };
 
   goCarrinho = () => {
@@ -52,14 +53,17 @@ export default class MudaTela extends React.Component {
         break;
       case "ContrataSer":
         return <ContrataSer goHome={this.goHome}  goCarrinho={this.goCarrinho}
-         goDetalheSer={this.goDetalheSer}/>;
+         goDetalheSer={this.goDetalheSer}   allJobs={this.props.allJobs}
+        adicionarCarrinho={this.props.adicionarCarrinho} />;
         break;
       case "DetalheSer":
         return <DetalheSer goHome={this.goHome}  goCarrinho={this.goCarrinho}
-        goContrataSer={this.goContrataSer} />;
+        goContrataSer={this.goContrataSer} servico={this.state.produtoSelecionado} 
+        adicionarCarrinho={this.props.adicionarCarrinho}/>;
         break;
       case "Carrinho":
-        return <Carrinho goContrataSer={this.goContrataSer} goHome={this.goHome} />;
+        return <Carrinho goContrataSer={this.goContrataSer} goHome={this.goHome}
+        carrinho={this.props.carrinho} />;
         break;
     }
   };

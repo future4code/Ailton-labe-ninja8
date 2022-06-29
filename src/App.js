@@ -15,6 +15,7 @@ export default class App extends Component {
     inputPrice: "",
     paymentMethods: [false, false, false, false, false],
     dueDateInput: "",
+    carrinho: [],
   };
 
   componentDidMount() {
@@ -182,6 +183,13 @@ export default class App extends Component {
     this.setState({ paymentMethods: array })
   }
 
+ adicionarCarrinho =(item)=>{
+  let novoCarrinho = [...this.state.carrinho]
+  novoCarrinho.push(item)
+  this.setState({carrinho:novoCarrinho})
+ }
+
+
   /// Funções onClick ///
 
   render() {
@@ -199,6 +207,9 @@ export default class App extends Component {
           inputPrice={this.state.inputPrice}
           paymentMethods={this.state.paymentMethods}
           onClickPayments={this.onClickPayments}
+          allJobs={this.state.allJobs}
+          adicionarCarrinho={this.adicionarCarrinho}
+          carrinho={this.state.carrinho}
         />
       </div>
     );
