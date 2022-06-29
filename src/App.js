@@ -1,9 +1,6 @@
 import axios from "axios";
 import React, { Component } from "react";
-import MudaTela from "../src/components/MudaTela"
-
-
-
+import MudaTela from "../src/components/MudaTela";
 
 export default class App extends Component {
   state = {
@@ -19,11 +16,12 @@ export default class App extends Component {
     inputMin: "",
     inputMax: Infinity,
     carrinho: [],
+    AvisoErro: "",
+    AvisoOK: "",
   };
 
   componentDidMount() {
-    this.gelAllJobs()
-
+    this.getAllJobs();
   }
 
   ////////// API //////////
@@ -40,14 +38,14 @@ export default class App extends Component {
   //   }
   // };
 
-  gelAllJobs = async () => {
+  getAllJobs = async () => {
     try {
       const response = await axios.get(this.state.baseURL + "/jobs", {
         headers: {
           Authorization: this.state.keyAPI,
         },
       });
-      console.log(response)
+      console.log(response);
       this.setState({
         allJobs: response.data.jobs,
       });
@@ -66,31 +64,32 @@ export default class App extends Component {
     } catch (error) {
       console.log(error.message);
     }
-    // this.setState({})
   };
 
   createJob = async () => {
-    if (this.state.inputTitle.trim() !== '') {
-      if (this.state.inputDescription.trim() !== '') {
-        if (this.state.inputPrice.trim() !== '') {
+    if (this.state.inputTitle.trim() !== "") {
+      if (this.state.inputDescription.trim() !== "") {
+        if (this.state.inputPrice.trim() !== "") {
           if (this.state.paymentMethods.indexOf(true, 0) !== -1) {
-            if (new Date().toISOString().slice(0, 10) <= this.state.dueDateInput) {
+            if (
+              new Date().toISOString().slice(0, 10) <= this.state.dueDateInput
+            ) {
               try {
-                let arrayConvertido = []
+                let arrayConvertido = [];
                 if (this.state.paymentMethods[0] === true) {
-                  arrayConvertido.push('Pix')
+                  arrayConvertido.push("Pix");
                 }
                 if (this.state.paymentMethods[1] === true) {
-                  arrayConvertido.push('Debito')
+                  arrayConvertido.push("Debito");
                 }
                 if (this.state.paymentMethods[2] === true) {
-                  arrayConvertido.push('Credito')
+                  arrayConvertido.push("Credito");
                 }
                 if (this.state.paymentMethods[3] === true) {
-                  arrayConvertido.push('Boleto')
+                  arrayConvertido.push("Boleto");
                 }
                 if (this.state.paymentMethods[4] === true) {
-                  arrayConvertido.push('PayPal')
+                  arrayConvertido.push("PayPal");
                 }
 
                 const body = {
@@ -105,27 +104,43 @@ export default class App extends Component {
                     Authorization: this.state.keyAPI,
                   },
                 });
-                this.gelAllJobs()
-                alert('serviço criado com sucesso')
+                this.setState({
+                  AvisoOK: "Serviço cadastrado com sucesso! :)",
+                  inputTitle: "",
+                  inputDescription: "",
+                  inputPrice: "",
+                  paymentMethods: [false, false, false, false, false],
+                  dueDateInput: "",
+                });
+                await this.getAllJobs();
               } catch (error) {
                 console.log(error.message);
               }
             } else {
-              alert('escolha uma data igual ou posterior ao dia atual')
+              this.setState({
+                AvisoErro: "Escolha uma data igual ou posterior ao dia atual!",
+              });
             }
           } else {
-            console.log('escolha uma forma de pagamento')
+            this.setState({
+              AvisoErro: "Escolha uma forma de pagamento!",
+            });
           }
         } else {
-          console.log('preencha o campo do preço')
+          this.setState({
+            AvisoErro: "Preencha o campo do preço!",
+          });
         }
       } else {
-        console.log('preencha o campo da descrição')
+        this.setState({
+          AvisoErro: "Preecha o campo da descrição!",
+        });
       }
     } else {
-      console.log('preecha o campo do titulo')
+      this.setState({
+        AvisoErro: "Preecha o campo do titulo!",
+      });
     }
-
   };
 
   deleteJob = async (id) => {
@@ -140,20 +155,16 @@ export default class App extends Component {
     }
   };
 
-  updateJob = async (id) => {
+  updateJob = async (item, troca) => {
     try {
       const body = {
-        taken: true,
+        taken: troca,
       };
-      const response = await axios.post(
-        this.state.baseURL + `/jobs/${id}`,
-        body,
-        {
-          headers: {
-            Authorization: this.state.keyAPI,
-          },
-        }
-      );
+      await axios.post(this.state.baseURL + `/jobs/${item.id}`, body, {
+        headers: {
+          Authorization: this.state.keyAPI,
+        },
+      });
     } catch (error) {
       console.log(error.message);
     }
@@ -164,81 +175,118 @@ export default class App extends Component {
   /// Funções onChange ///
 
   onChangeTitle = (e) => {
-    this.setState({ inputTitle: e.target.value.trim() })
-  }
+    this.setState({ inputTitle: e.target.value.trim(), AvisoErro: "" });
+  };
   onChangeDescription = (e) => {
-    this.setState({ inputDescription: e.target.value.trim() })
-  }
+    this.setState({ inputDescription: e.target.value.trim(), AvisoErro: "" });
+  };
   onChangePrice = (e) => {
-    this.setState({ inputPrice: e.target.value })
-  }
+    this.setState({ inputPrice: e.target.value, AvisoErro: "" });
+  };
   onChangeDate = (e) => {
-    this.setState({ dueDateInput: e.target.value })
-  }
+    this.setState({ dueDateInput: e.target.value, AvisoErro: "" });
+  };
 
   onChangeSearch = (e) => {
-    this.setState({inputSearch: e.target.value})
-  }
+    this.setState({ inputSearch: e.target.value });
+  };
   onChangeMin = (e) => {
-    this.setState({inputMin: e.target.value})
-  }
+    this.setState({ inputMin: e.target.value });
+  };
   onChangeMax = (e) => {
     if (e.target.value !== "") {
-      this.setState({inputMax: e.target.value})
+      this.setState({ inputMax: e.target.value });
     } else {
-      this.setState({inputMax: Infinity})
+      this.setState({ inputMax: Infinity });
     }
-  }
+  };
   onChangeSelect = (e) => {
     if (e.target.value === "Crescente") {
-      this.setState({allJobs: this.state.allJobs.sort((a, b) => {
-       return a.price - b.price
-      })})
-    } 
+      this.setState({
+        allJobs: this.state.allJobs.sort((a, b) => {
+          return a.price - b.price;
+        }),
+      });
+    }
     if (e.target.value === "Decrescente") {
-      this.setState({allJobs: this.state.allJobs.sort((a, b) => {
-       return b.price - a.price
-      })})
+      this.setState({
+        allJobs: this.state.allJobs.sort((a, b) => {
+          return b.price - a.price;
+        }),
+      });
     }
     if (e.target.value === "Prazos") {
-      this.setState({allJobs: this.state.allJobs.sort((a, b) => {
-       return new Date(a.dueDate.slice(0, 10)) - new Date( b.dueDate.slice(0,10))
-      })})
+      this.setState({
+        allJobs: this.state.allJobs.sort((a, b) => {
+          return (
+            new Date(a.dueDate.slice(0, 10)) - new Date(b.dueDate.slice(0, 10))
+          );
+        }),
+      });
     }
     if (e.target.value === "Serviços") {
-      this.gelAllJobs()
+      this.getAllJobs();
     }
-  }
+  };
 
   /// Funções onChange ///
 
   /// Funções onClick ///
 
   onClickPayments = (index) => {
-    let array = [...this.state.paymentMethods]
-    array[index] = !array[index]
-    this.setState({ paymentMethods: array })
-  }
+    let array = [...this.state.paymentMethods];
+    array[index] = !array[index];
+    this.setState({ paymentMethods: array });
+  };
 
- adicionarCarrinho =(item)=>{
-  let novoCarrinho = [...this.state.carrinho]
-  novoCarrinho.push(item)
-  this.setState({carrinho:novoCarrinho})
- }
- limparCampos =() => {
-  this.setState({
-    inputSearch: "",
-    inputMin:"",
-    inputMax: Infinity,
-  })
- }
+  adicionarCarrinho = async (item) => {
+    let novoCarrinho = [...this.state.carrinho];
+    novoCarrinho.push(item);
+    await this.updateJob(item, true);
+    await this.getAllJobs();
+    this.setState({ carrinho: novoCarrinho });
+  };
+
+  limparCampos = () => {
+    this.setState({
+      inputSearch: "",
+      inputMin: "",
+      inputMax: Infinity,
+    });
+  };
+
+  removerCarrinho = async (itemRemovido) => {
+    console.log("ooo", itemRemovido);
+    const novoCarrinho = this.state.carrinho.filter((item) => {
+      if (item.id !== itemRemovido.id) {
+        return item;
+      }
+    });
+    await this.updateJob(itemRemovido, false);
+    await this.getAllJobs();
+    this.setState({
+      carrinho: novoCarrinho,
+    });
+  };
+
+  removerTodoCarrinho = async (comprar) => {
+    for (const item of this.state.carrinho) {
+      await this.updateJob(item, false);
+    }
+    await this.getAllJobs();
+    this.setState({
+      carrinho: [],
+    });
+    if (comprar === true) {
+      alert("obrigado por comprar");
+    }
+  };
 
   /// Funções onClick ///
 
   render() {
     return (
       <div>
-        
         <MudaTela
           createJob={this.createJob}
           onChangeTitle={this.onChangeTitle}
@@ -261,6 +309,11 @@ export default class App extends Component {
           adicionarCarrinho={this.adicionarCarrinho}
           carrinho={this.state.carrinho}
           limparCampos={this.limparCampos}
+          removerCarrinho={this.removerCarrinho}
+          getAllJobs={this.getAllJobs}
+          removerTodoCarrinho={this.removerTodoCarrinho}
+          AvisoErro={this.state.AvisoErro}
+          AvisoOK={this.state.AvisoOK}
         />
       </div>
     );
