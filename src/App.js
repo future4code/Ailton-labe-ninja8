@@ -18,7 +18,8 @@ export default class App extends Component {
     inputSearch: "",
     inputMin: 0,
     inputMax: Infinity,
-    inputSelect: ""
+    inputSelect: "",
+    carrinho: [],
   };
 
   componentDidMount() {
@@ -198,6 +199,13 @@ export default class App extends Component {
     this.setState({ paymentMethods: array })
   }
 
+ adicionarCarrinho =(item)=>{
+  let novoCarrinho = [...this.state.carrinho]
+  novoCarrinho.push(item)
+  this.setState({carrinho:novoCarrinho})
+ }
+
+
   /// Funções onClick ///
 
   render() {
@@ -222,6 +230,9 @@ export default class App extends Component {
           onChangeMax={this.onChangeMax}
           inputMax={this.state.inputMax}
           onChangeSelect={this.onChangeSelect}
+          allJobs={this.state.allJobs}
+          adicionarCarrinho={this.adicionarCarrinho}
+          carrinho={this.state.carrinho}
         />
       </div>
     );
