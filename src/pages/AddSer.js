@@ -1,39 +1,107 @@
 import React from "react";
-import { ContainerPage } from "./styled";
-import { Header, HomeButton, ServButton, InputServ, InputServTres, InputServDois } from "./styled";
-import { Main } from "./styled";
+import {
+  ContainerPage,
+  ContainerAddServ,
+  ContainerMethods,
+  MainAddServ,
+  HeaderAddServ,
+  BoxMethods,
+  Method1,
+  ButtonAdd,
+  ImgHeaderAdd,
+} from "./styled";
+import {
+  Header,
+  HomeButton,
+  ServButton,
+  InputServ,
+  InputServTres,
+  InputServDois,
+  InputServQuatro,
+} from "./styled";
 import { Footer } from "../components/Footer";
+import {
+  CorRosa,
+  CorVerde,
+  CorAmarelo,
+  AzulClaro,
+  AzulEscuro,
+} from "../constants/cores";
+import logo from "../assets/logoHeader2.png";
 
 export const AddSer = (props) => {
-    return (
-        <ContainerPage>
-            <Header>Eu sou o header do Adiciona Serviço </Header>
-            <Main>
-                <div>
-                    <h1>Adiciona Serviço</h1>
-                    <HomeButton onClick={props.goHome}>Home</HomeButton>
-                    <ServButton onClick={props.goContrataSer}>Serviços</ServButton>
-                </div>
-                <div>
-                    <InputServ onChange={props.onChangeTitle} placeholder={'Titulo'} />
-                    <InputServDois onChange={props.onChangeDescription} placeholder={'Descrição do serviço'} />
-                    <InputServTres onChange={props.onChangePrice} type={'number'} min={0} placeholder={'Preço'} />
-                    <div>
-                        <h4>Formas de pagamento</h4>
-                        <p onClick={() => props.onClickPayments(0)}>Pix</p>
-                        <p onClick={() => props.onClickPayments(1)}>Debito</p>
-                        <p onClick={() => props.onClickPayments(2)}>Credito</p>
-                        <p onClick={() => props.onClickPayments(3)}>Boleto</p>
-                        <p onClick={() => props.onClickPayments(4)}>PayPal</p>
-                    </div>
-                    <input onChange={props.onChangeDate} type={'date'} />
-                    <button onClick={props.createJob}>Adicionar serviço</button>
-                </div>
-            </Main>
-            <Footer />
-        </ContainerPage>
-    )
-}
+  return (
+    <ContainerPage>
+      <HeaderAddServ>
+        <ImgHeaderAdd onClick={props.goHome} src={logo} />
+        <ServButton onClick={props.goContrataSer}>Serviços</ServButton>
+      </HeaderAddServ>
+      <MainAddServ>
+        <ContainerAddServ>
+          <h1>Criar Serviço</h1>
+          <InputServ onChange={props.onChangeTitle} placeholder={"Titulo"} />
+          <InputServDois
+            onChange={props.onChangeDescription}
+            placeholder={"Descrição do serviço"}
+          />
+          <InputServTres
+            onChange={props.onChangePrice}
+            type={"number"}
+            min={0}
+            placeholder={"Preço"}
+          />
+          <BoxMethods>
+            <h4>Formas de pagamento</h4>
+            <ContainerMethods>
+              <Method1
+                cor={CorRosa}
+                bool={props.paymentMethods[0]}
+                onClick={() => props.onClickPayments(0)}
+              >
+                Pix
+              </Method1>
+              <Method1
+                cor={"#b388eb"}
+                bool={props.paymentMethods[1]}
+                onClick={() => props.onClickPayments(1)}
+              >
+                Debito
+              </Method1>
+              <Method1
+                cor={CorAmarelo}
+                bool={props.paymentMethods[2]}
+                onClick={() => props.onClickPayments(2)}
+              >
+                Credito
+              </Method1>
+              <Method1
+                cor={AzulClaro}
+                bool={props.paymentMethods[3]}
+                onClick={() => props.onClickPayments(3)}
+              >
+                Boleto
+              </Method1>
+              <Method1
+                cor={CorVerde}
+                bool={props.paymentMethods[4]}
+                onClick={() => props.onClickPayments(4)}
+              >
+                PayPal
+              </Method1>
+            </ContainerMethods>
+          </BoxMethods>
+          <InputServQuatro onChange={props.onChangeDate} type={"date"} />
+          <ButtonAdd onClick={props.createJob}>Adicionar Serviço</ButtonAdd>
+          <p>
+            {props.AvisoErro}
+            {props.AvisoOK}
+          </p>
+        </ContainerAddServ>
+      </MainAddServ>
+      <Footer />
+    </ContainerPage>
+  );
+};
 
 // onChangeTitle={this.props.onChangeTitle}
 // onChangeDescription={this.props.onChangeDescription}
