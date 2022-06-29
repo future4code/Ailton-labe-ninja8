@@ -9,6 +9,7 @@ export const Carrinho = (props) => {
   let soma = 0;
   const MostraItemCarrinho = props.carrinho.map((item) => {
     soma += item.price;
+    
     return (
       <CardCarrinho
         key={item.id}
@@ -17,6 +18,7 @@ export const Carrinho = (props) => {
       />
     );
   });
+
   return (
     <ContainerPage>
       <Header>

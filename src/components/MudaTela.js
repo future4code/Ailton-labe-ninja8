@@ -106,7 +106,6 @@ export default class MudaTela extends React.Component {
         break;
     }
   };
-
   render() {
     return <ContainerMudaTela>{this.escolheTela()}</ContainerMudaTela>;
   }

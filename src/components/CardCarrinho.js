@@ -1,6 +1,8 @@
 import React from "react";
 
+
 export const CardCarrinho = (props) => {
+ 
   return (
     <div>
       <p>{props.servico.title}</p>
