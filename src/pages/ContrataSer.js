@@ -7,12 +7,29 @@ import { Footer } from "../components/Footer";
 export const ContrataSer =(props)=>{
     return(
     <ContainerPage>
-        <Header>Eu sou o header do Contrata Serviço </Header>
+        <Header> <button onClick={props.goHome}>Home</button> </Header>
+       
         <Main>
             <div>
         <h1>Contrata Serviço</h1>
-            <button onClick={props.goHome}>Home</button>
+          <input placeholder="Busca"
+          onChange={props.onChangeSearch}
+          value={props.inputSearch}/>
+          <input min={0} placeholder="Valor Minimo" type={"Number"}
+          onChange={props.onChangeMin} value={props.inputMin}
+          />
+          <input min={0} placeholder="Valor Maximo" type={"Number"}
+           onChange={props.onChangeMax}  value={props.inputMax}
+          />
+        <select onChange={props.onChangeSelect}>
+            <option>Crescente</option>
+            <option>Decrescente</option>
+            <option>Prazos</option>
+        </select>
             </div>
+        
+
+          
             <div>
                 
             </div>

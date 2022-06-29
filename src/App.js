@@ -15,6 +15,10 @@ export default class App extends Component {
     inputPrice: "",
     paymentMethods: [false, false, false, false, false],
     dueDateInput: "",
+    inputSearch: "",
+    inputMin: 0,
+    inputMax: Infinity,
+    inputSelect: ""
   };
 
   componentDidMount() {
@@ -172,6 +176,18 @@ export default class App extends Component {
     this.setState({ dueDateInput: e.target.value })
   }
 
+  onChangeSearch = (e) => {
+    this.setState({inputSearch: e.target.value})
+  }
+  onChangeMin = (e) => {
+    this.setState({inputMin: e.target.value})
+  }
+  onChangeMax = (e) => {
+    this.setState({inputMax: e.target.value})
+  }
+  onChangeSelect = (e) => {
+    this.setState({inputSelect: e.target.value})
+  }
   /// Funções onChange ///
 
   /// Funções onClick ///
@@ -199,6 +215,13 @@ export default class App extends Component {
           inputPrice={this.state.inputPrice}
           paymentMethods={this.state.paymentMethods}
           onClickPayments={this.onClickPayments}
+          onChangeSearch={this.onChangeSearch}
+          inputSearch={this.state.inputSearch}
+          onChangeMin={this.onChangeMin}
+          inputMin={this.state.inputMin}
+          onChangeMax={this.onChangeMax}
+          inputMax={this.state.inputMax}
+          onChangeSelect={this.onChangeSelect}
         />
       </div>
     );
