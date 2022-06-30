@@ -68,6 +68,11 @@ export default class App extends Component {
       });
       this.setState({
         allJobs: response.data.jobs,
+        inputTitle: "",
+        inputDescription: "",
+        inputPrice: "",
+        paymentMethods: [false, false, false, false, false],
+        dueDateInput: "",
       });
     } catch (error) {
       console.log(error.message);
@@ -170,6 +175,7 @@ export default class App extends Component {
           Authorization: this.state.keyAPI,
         },
       });
+      this.getAllJobs();
     } catch (error) {
       console.log(error.message);
     }
@@ -196,16 +202,24 @@ export default class App extends Component {
   /// Funções onChange ///
 
   onChangeTitle = (e) => {
-    this.setState({ inputTitle: e.target.value.trim(), AvisoErro: "" });
+    this.setState({
+      inputTitle: e.target.value.trim(),
+      AvisoErro: "",
+      AvisoOK: "",
+    });
   };
   onChangeDescription = (e) => {
-    this.setState({ inputDescription: e.target.value.trim(), AvisoErro: "" });
+    this.setState({
+      inputDescription: e.target.value.trim(),
+      AvisoErro: "",
+      AvisoOK: "",
+    });
   };
   onChangePrice = (e) => {
-    this.setState({ inputPrice: e.target.value, AvisoErro: "" });
+    this.setState({ inputPrice: e.target.value, AvisoErro: "", AvisoOK: "" });
   };
   onChangeDate = (e) => {
-    this.setState({ dueDateInput: e.target.value, AvisoErro: "" });
+    this.setState({ dueDateInput: e.target.value, AvisoErro: "", AvisoOK: "" });
   };
 
   onChangeSearch = (e) => {
@@ -334,6 +348,7 @@ export default class App extends Component {
           removerTodoCarrinho={this.removerTodoCarrinho}
           AvisoErro={this.state.AvisoErro}
           AvisoOK={this.state.AvisoOK}
+          deleteJob={this.deleteJob}
         />
       </div>
     );

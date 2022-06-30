@@ -27,6 +27,15 @@ export const Card = (props) => {
         ) : (
           <ImgCarrinho src={Carrinho2}/>
         )}
+        {props.segredinho >= 5 &&
+        <ButaoCards
+          onClick={() => {
+            props.deleteJob(props.servico.id);
+          }}
+        >
+          DELETAR
+        </ButaoCards>        
+        }
 
         <ButaoCards
           onClick={() => {
@@ -34,7 +43,7 @@ export const Card = (props) => {
           }}
         >
           Ver detalhes
-        </ButaoCards>
+        </ButaoCards>        
       </ButaoCard>
     </CardServico>
   );

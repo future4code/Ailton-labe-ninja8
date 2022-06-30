@@ -80,6 +80,7 @@ export default class MudaTela extends React.Component {
             inputMax={this.props.inputMax}
             onChangeSelect={this.props.onChangeSelect}
             limparCampos={this.props.limparCampos}
+            deleteJob={this.props.deleteJob}
           />
         );
         break;
