@@ -18,9 +18,7 @@ export const Card = (props) => {
             Adicionar ao Carrinho
           </button>
         ) : (
-          <p onClick={() => {
-            props.adicionarCarrinho(props.servico);
-          }}>Indisponivel</p>
+          <p>Já adicionado no carrinho</p>
         )}
 
         <button

@@ -22,6 +22,15 @@ export default class App extends Component {
 
   componentDidMount() {
     this.getAllJobs();
+    if (localStorage.getItem("carrinho")) {
+      this.setState({
+        carrinho: JSON.parse(localStorage.getItem("carrinho")),
+      });
+    }
+  }
+
+  componentDidUpdate() {
+    localStorage.setItem("carrinho", JSON.stringify(this.state.carrinho));
   }
 
   ////////// API //////////
@@ -45,7 +54,6 @@ export default class App extends Component {
           Authorization: this.state.keyAPI,
         },
       });
-      console.log(response);
       this.setState({
         allJobs: response.data.jobs,
       });
@@ -256,7 +264,6 @@ export default class App extends Component {
   };
 
   removerCarrinho = async (itemRemovido) => {
-    console.log("ooo", itemRemovido);
     const novoCarrinho = this.state.carrinho.filter((item) => {
       if (item.id !== itemRemovido.id) {
         return item;

@@ -6,8 +6,6 @@ import { Footer } from "../components/Footer";
 import { Card } from "../components/Card";
 
 export const ContrataSer = (props) => {
-  console.log(props.allJobs);
-  console.log(props.inputSearch);
   const MostraCard = props.allJobs
     .filter((item) => {
       if (
@@ -30,7 +28,6 @@ export const ContrataSer = (props) => {
         />
       );
     });
-  console.log({ MostraCard });
   return (
     <ContainerPageSer>
       <Header>

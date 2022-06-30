@@ -5,6 +5,9 @@ import { Main } from "./styled";
 import { Footer } from "../components/Footer";
 
 export const DetalheSer = (props) => {
+  const statusServ = props.allJobs.filter((item) => {
+    return item.id === props.servico.id;
+  });
   return (
     <ContainerPage>
       <Header>
@@ -23,7 +26,7 @@ export const DetalheSer = (props) => {
             <p>:{props.servico.price}</p>
           </div>
           <div>{props.servico.description}</div>
-          {props.servico.taken === false ? (
+          {statusServ[0].taken === false ? (
             <button
               onClick={() => {
                 props.adicionarCarrinho(props.servico);
@@ -32,9 +35,9 @@ export const DetalheSer = (props) => {
               Adicionar ao Carrinho
             </button>
           ) : (
-            <p onClick={() => {
-                props.adicionarCarrinho(props.servico);
-              }}>Indisponivel</p>
+            <p>
+              Já adicionado no carrinho
+            </p>
           )}
 
           <button onClick={props.goContrataSer}>Voltar para a lista</button>
