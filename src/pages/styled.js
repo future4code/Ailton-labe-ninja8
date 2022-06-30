@@ -7,12 +7,10 @@ import {
   AzulEscuro,
 } from "../constants/cores";
 
-
-
 export const CarrinhoVazio = styled.h2`
-margin-top:100px;
-color: ${AzulEscuro}
-`
+  margin-top: 100px;
+  color: ${AzulEscuro};
+`;
 
 export const ContainerPage = styled.div`
   width: 100%;
@@ -21,8 +19,8 @@ export const ContainerPage = styled.div`
 
 export const ImgHeaderAdd = styled.img`
   height: 80%;
-  cursor:pointer;
-`
+  cursor: pointer;
+`;
 
 export const ContainerAddServ = styled.div`
   display: flex;
@@ -49,6 +47,22 @@ export const Method1 = styled.p`
   background-color: ${(props) => (props.bool === true ? props.cor : "none")};
   padding: 3px;
   border-radius: 6px;
+`;
+export const Method2 = styled.p`
+  background-color: ${(props) => (props.bool === true ? props.cor : "none")};
+  padding: 3px;
+  border-radius: 6px;
+  text-align: center;
+  display: inline;
+  margin: 4px;
+`;
+
+export const DivMethods = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
 `;
 
 export const ButtonAdd = styled.button`
@@ -120,7 +134,7 @@ export const HeaderContrataSer = styled.header`
 `;
 
 export const HeaderAddServ = styled.header`
-padding: 0 20px;
+  padding: 0 20px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -132,7 +146,7 @@ padding: 0 20px;
 
 export const ImagemHeader = styled.img`
   height: 80%;
-  cursor:pointer;
+  cursor: pointer;
 `;
 
 export const MainAddServ = styled.main`
@@ -144,14 +158,14 @@ export const MainAddServ = styled.main`
   align-items: center;
 `;
 
- export const MainDetalhe = styled.main`
- width: 100%;
+export const MainDetalhe = styled.main`
+  width: 100%;
   height: 90vh;
   display: flex;
-  align-items:center;
-  justify-content:center;
+  align-items: center;
+  justify-content: center;
   background-color: #c9e4de;
- `
+`;
 export const Main = styled.main`
   width: 100%;
   height: 100%;
@@ -250,103 +264,104 @@ export const InputServQuatro = styled.input`
 `;
 
 export const InputSearch = styled.input`
-padding: 12px 50px;
-border: none;
-border-radius: 8px;
-`
-
-export const MostraCards = styled.div`
-width: 100%;
-height: 100%;
-display: flex;
-flex-wrap: wrap;
-justify-content: center;
-gap: 18px;
-padding: 25px 10px;
-`
-
-export const CampoDePesquisa = styled.div`
-display: flex;
-justify-content: center;
-align-items: center;
-padding-top: 25px;
-gap: 8px;
-input, select{
-  padding: 10px;
-  width: 20%; 
+  padding: 12px 50px;
   border: none;
   border-radius: 8px;
-}
-`
-export const CarrinhoDiv = styled.div `
-display: flex;
-justify-content: center;
-flex-direction: column;
-align-items: center;
+`;
 
-`
-export const MainCarrinho = styled.div `
-height: 90vh;
-width: 100%;
-background-color: #feeafa;
-`
-export const DivBottom = styled.div `
-font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif ;
-width: 100%;
-height: 25px;
-display: flex;
-padding: 40px 0;
-flex-direction: column;
-justify-content: center;
-align-items: center;
+export const MostraCards = styled.div`
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 18px;
+  padding: 25px 10px;
+`;
 
-p {
-  font-size: 20px;
-  padding-bottom: 10px;
-}
-`
-export const Titulo = styled.h1 `
-padding: 25px;
-color:#3a0ca3;
-`
+export const CampoDePesquisa = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 25px;
+  gap: 8px;
+  input,
+  select {
+    padding: 10px;
+    width: 20%;
+    border: none;
+    border-radius: 8px;
+  }
+`;
+export const CarrinhoDiv = styled.div`
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+`;
+export const MainCarrinho = styled.div`
+  height: 90vh;
+  width: 100%;
+  background-color: #feeafa;
+`;
+export const DivBottom = styled.div`
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  width: 100%;
+  height: 25px;
+  display: flex;
+  padding: 40px 0;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  p {
+    font-size: 20px;
+    padding-bottom: 10px;
+  }
+`;
+export const Titulo = styled.h1`
+  padding: 25px;
+  color: #3a0ca3;
+`;
 
 export const CaixinhaDetalhes = styled.div`
-width:50%;
-height:65%;
-border-radius:16px;
-display:flex;
-flex-direction:column;
-justify-content: space-around;
-align-items:center;
-background-color: #f2b5d4;
+  width: 50%;
+  height: 65%;
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #f2b5d4;
 
-h1{
-  font-size: 47px;
-  color: #758bfd;
-}
+  h1 {
+    font-size: 47px;
+    color: #758bfd;
+  }
 
-p{
-  font-size:20px;
-  color:${AzulEscuro};
-}
-`
+  p {
+    font-size: 20px;
+    color: ${AzulEscuro};
+  }
+`;
 /* #3d348b; */
 
 export const BotoesDetalhes = styled.div`
-width:70%;
-display:flex;
-flex-direction:column;
-p{
-  text-align:center;
-  margin-top:5px;
-}
-`
-export const ButtonVoltar = styled.button `
-cursor: pointer;
- padding: 10px;
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  p {
+    text-align: center;
+    margin-top: 5px;
+  }
+`;
+export const ButtonVoltar = styled.button`
+  cursor: pointer;
+  padding: 10px;
   border: none;
   border-radius: 8px;
-  background-color: #cbf3f0 ;
+  background-color: #cbf3f0;
   color: ${CorRosa};
-  margin-top:8px;
-`
+  margin-top: 8px;
+`;
