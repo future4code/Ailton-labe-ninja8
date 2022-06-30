@@ -1,34 +1,38 @@
 import React from "react";
+import { CardServico, ButaoCard, CardTitulo, ButaoCards, ImgCarrinho} from "./styled";
+import Carrinho1 from '../assets/CarrinhoV.png'
+import Carrinho2 from '../assets/CarrinhoC.png'
 
 export const Card = (props) => {
   return (
-    <div>
-      <p>{props.servico.title}</p>
+    <CardServico>
+      <CardTitulo>
+        <strong>{props.servico.title}</strong>
+      </CardTitulo>
       <div>
-        <p>{props.servico.dueDate.slice(0, 10)}</p>
-        <p>{props.servico.price}</p>
+        <p>Até {props.servico.dueDate.slice(0, 10)}</p>
+        <p>R$ {props.servico.price}</p>
       </div>
-      <div>
+      <ButaoCard>
         {props.servico.taken === false ? (
-          <button
+          <ImgCarrinho src={Carrinho1}
             onClick={() => {
               props.adicionarCarrinho(props.servico);
             }}
-          >
-            Adicionar ao Carrinho
-          </button>
+          />
+         
         ) : (
-          <p>Já adicionado no carrinho</p>
+          <ImgCarrinho src={Carrinho2}/>
         )}
 
-        <button
+        <ButaoCards
           onClick={() => {
             props.goDetalheSer(props.servico);
           }}
         >
           Ver detalhes
-        </button>
-      </div>
-    </div>
+        </ButaoCards>
+      </ButaoCard>
+    </CardServico>
   );
 };
