@@ -33,7 +33,7 @@ gap:10px;
 background-color: #E4C1F9;
 
 p{
-    color:#3a0ca3;
+    color:#3d348b;
     font-size: bold;
 }
 /* opacity: 80%; */
@@ -58,11 +58,12 @@ padding: 10px;
 border: none;
 border-radius: 8px;
 background-color: #FF99C8;
-color:#3a0ca3;
+color:#3d348b;
 `
 
 export const ImgCarrinho = styled.img`
 height: 40px;
+cursor:pointer;
 `
 export const ButtonLimpar = styled.button `
  padding: 10px;
@@ -88,8 +89,7 @@ border-radius: 5px;
 `
 export const ImgLixeira = styled.img`
 height: 30px;
-
-
+cursor:pointer;
 `
 export const ButaoRemover = styled.button `
 padding: 10px;

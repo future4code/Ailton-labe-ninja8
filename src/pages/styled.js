@@ -7,6 +7,13 @@ import {
   AzulEscuro,
 } from "../constants/cores";
 
+
+
+export const CarrinhoVazio = styled.h2`
+margin-top:100px;
+color: ${AzulEscuro}
+`
+
 export const ContainerPage = styled.div`
   width: 100%;
   height: 100%;
@@ -14,7 +21,9 @@ export const ContainerPage = styled.div`
 
 export const ImgHeaderAdd = styled.img`
   height: 80%;
-`;
+  cursor:pointer;
+`
+
 export const ContainerAddServ = styled.div`
   display: flex;
   width: 550px;
@@ -123,16 +132,26 @@ padding: 0 20px;
 
 export const ImagemHeader = styled.img`
   height: 80%;
+  cursor:pointer;
 `;
 
 export const MainAddServ = styled.main`
   width: 100%;
-  height: 80vh;
+  height: 90vh;
   display: flex;
   flex-direction: column;
   padding-top: 60px;
   align-items: center;
 `;
+
+ export const MainDetalhe = styled.main`
+ width: 100%;
+  height: 90vh;
+  display: flex;
+  align-items:center;
+  justify-content:center;
+  background-color: #c9e4de;
+ `
 export const Main = styled.main`
   width: 100%;
   height: 100%;
@@ -267,7 +286,7 @@ align-items: center;
 
 `
 export const MainCarrinho = styled.div `
-height: 80vh;
+height: 90vh;
 width: 100%;
 background-color: #feeafa;
 `
@@ -288,4 +307,46 @@ p {
 `
 export const Titulo = styled.h1 `
 padding: 25px;
+color:#3a0ca3;
+`
+
+export const CaixinhaDetalhes = styled.div`
+width:50%;
+height:65%;
+border-radius:16px;
+display:flex;
+flex-direction:column;
+justify-content: space-around;
+align-items:center;
+background-color: #f2b5d4;
+
+h1{
+  font-size: 47px;
+  color: #758bfd;
+}
+
+p{
+  font-size:20px;
+  color:${AzulEscuro};
+}
+`
+/* #3d348b; */
+
+export const BotoesDetalhes = styled.div`
+width:70%;
+display:flex;
+flex-direction:column;
+p{
+  text-align:center;
+  margin-top:5px;
+}
+`
+export const ButtonVoltar = styled.button `
+cursor: pointer;
+ padding: 10px;
+  border: none;
+  border-radius: 8px;
+  background-color: #cbf3f0 ;
+  color: ${CorRosa};
+  margin-top:8px;
 `

@@ -99,7 +99,7 @@ export const AddSer = (props) => {
 
         </ContainerAddServ>
       </MainAddServ>
-      <Footer />
+     
     </ContainerPage>
   );
 };

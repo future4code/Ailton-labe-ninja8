@@ -1,7 +1,7 @@
 import React from "react";
 import { ContainerPageSer, } from "./styled";
 import { HeaderContrataSer, ImagemHeader, InputSearch, CampoDePesquisa } from "./styled";
-import { Main, MostraCards, } from "./styled";
+import { Main, MostraCards } from "./styled";
 import { Footer } from "../components/Footer";
 import { Card } from "../components/Card";
 import logo from "../assets/logoHeader2.png";
@@ -70,7 +70,6 @@ export const ContrataSer = (props) => {
 
         <MostraCards>{MostraCard}</MostraCards>
       </Main>
-      <Footer />
     </ContainerPageSer>
   );
 };

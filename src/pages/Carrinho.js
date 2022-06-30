@@ -1,5 +1,5 @@
 import React from "react";
-import { ContainerPage } from "./styled";
+import { ContainerPage, CarrinhoVazio } from "./styled";
 import { Header } from "./styled";
 import { MainCarrinho } from "./styled";
 import { Footer } from "../components/Footer";
@@ -46,11 +46,10 @@ export const Carrinho = (props) => {
             </DivBottom>
           </div>
         ) : (
-          <p>Carrinho vazio</p>
+          <CarrinhoVazio>Carrinho vazio</CarrinhoVazio>
         )}
         </CarrinhoDiv>
       </MainCarrinho>
-      <Footer />
     </ContainerPage>
   );
 };
