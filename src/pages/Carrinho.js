@@ -1,9 +1,13 @@
 import React from "react";
 import { ContainerPage } from "./styled";
 import { Header } from "./styled";
-import { Main } from "./styled";
+import { MainCarrinho } from "./styled";
 import { Footer } from "../components/Footer";
 import { CardCarrinho } from "../components/CardCarrinho";
+import { HeaderContrataSer, ImagemHeader } from "./styled";
+import logo from "../assets/logoHeader2.png"
+import { CarrinhoDiv, DivBottom, Titulo } from "./styled"
+import {ButaoCards, ButaoRemover} from "../components/styled"
 
 export const Carrinho = (props) => {
   let soma = 0;
@@ -21,28 +25,31 @@ export const Carrinho = (props) => {
 
   return (
     <ContainerPage>
-      <Header>
-        Eu sou o header Carrinho
-        <button onClick={props.goContrataSer}>Voltar</button>
-        <button onClick={props.goHome}>Home</button>
-      </Header>
-      <Main>
-        <h1>Carrinho</h1>
+     <HeaderContrataSer>
+        <ImagemHeader src={logo} onClick={props.goHome}/>
+        <ButaoCards onClick={props.goContrataSer}>Voltar para a lista</ButaoCards>
+        </HeaderContrataSer>
+      <MainCarrinho> 
+        <CarrinhoDiv>
+        <Titulo>Carrinho</Titulo>
+        <ButaoRemover onClick={() => props.removerTodoCarrinho(false)}>
+              Remover tudo
+            </ButaoRemover>
         {soma !== 0 ? (
           <div>
             {MostraItemCarrinho}
-            <button onClick={() => props.removerTodoCarrinho(false)}>
-              Remover tudo
-            </button>
-            <button onClick={() => props.removerTodoCarrinho(true)}>
+            <DivBottom>
+            <p>Valor total: R$ {soma}</p>
+            <ButaoCards onClick={() => props.removerTodoCarrinho(true)}>
               Finalizar compra
-            </button>
-            <p>Valor total: {soma}</p>
+            </ButaoCards>
+            </DivBottom>
           </div>
         ) : (
           <p>Carrinho vazio</p>
         )}
-      </Main>
+        </CarrinhoDiv>
+      </MainCarrinho>
       <Footer />
     </ContainerPage>
   );

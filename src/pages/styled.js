@@ -259,4 +259,33 @@ input, select{
   border-radius: 8px;
 }
 `
+export const CarrinhoDiv = styled.div `
+display: flex;
+justify-content: center;
+flex-direction: column;
+align-items: center;
 
+`
+export const MainCarrinho = styled.div `
+height: 80vh;
+width: 100%;
+background-color: #feeafa;
+`
+export const DivBottom = styled.div `
+font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif ;
+width: 100%;
+height: 25px;
+display: flex;
+padding: 40px 0;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+
+p {
+  font-size: 20px;
+  padding-bottom: 10px;
+}
+`
+export const Titulo = styled.h1 `
+padding: 25px;
+`

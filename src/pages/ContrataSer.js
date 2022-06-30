@@ -1,10 +1,12 @@
 import React from "react";
-import { ContainerPageSer,  } from "./styled";
+import { ContainerPageSer, } from "./styled";
 import { HeaderContrataSer, ImagemHeader, InputSearch, CampoDePesquisa } from "./styled";
-import { Main, MostraCards } from "./styled";
+import { Main, MostraCards, } from "./styled";
 import { Footer } from "../components/Footer";
 import { Card } from "../components/Card";
 import logo from "../assets/logoHeader2.png";
+import carrinho from "../assets/CarrinhoV.png"
+import {ImgCarrinho, ButtonLimpar} from "../components/styled"
 
 export const ContrataSer = (props) => {
   const MostraCard = props.allJobs
@@ -38,7 +40,8 @@ export const ContrataSer = (props) => {
             onChange={props.onChangeSearch}
             value={props.inputSearch}
           />
-        <button onClick={props.goCarrinho}>Carrinho</button>
+        <ImgCarrinho onClick={props.goCarrinho} src={carrinho}/>
+        
       </HeaderContrataSer>
       <Main>
         <CampoDePesquisa>
@@ -62,7 +65,7 @@ export const ContrataSer = (props) => {
             <option>Decrescente</option>
             <option>Prazos</option>
           </select>
-          <button onClick={props.limparCampos}>Limpar Campos</button>
+          <ButtonLimpar onClick={props.limparCampos}>Limpar Campos</ButtonLimpar>
         </CampoDePesquisa>
 
         <MostraCards>{MostraCard}</MostraCards>
