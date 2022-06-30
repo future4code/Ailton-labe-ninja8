@@ -1,20 +1,19 @@
 import React from "react";
-import { ContainerPage } from "./styled";
-import { Header } from "./styled";
-import { MainDetalhe, BotoesDetalhes,DivMethods, ButtonVoltar } from "./styled";
-import { Footer } from "../components/Footer";
-import { HeaderContrataSer, ImagemHeader, CaixinhaDetalhes } from "./styled";
+import {
+  ContainerPage,
+  MainDetalhe,
+  BotoesDetalhes,
+  DivMethods,
+  ButtonVoltar,
+  HeaderContrataSer,
+  ImagemHeader,
+  CaixinhaDetalhes,
+  Method2,
+} from "./styled";
 import { ImgCarrinho } from "../components/styled";
 import logo from "../assets/logoHeader2.png";
 import carrinho from "../assets/CarrinhoV.png";
-import {
-  CorRosa,
-  CorVerde,
-  CorAmarelo,
-  AzulClaro,
-  AzulEscuro,
-} from "../constants/cores";
-import { Method2 } from "./styled";
+import { CorRosa, CorVerde, CorAmarelo, AzulClaro } from "../constants/cores";
 
 export const DetalheSer = (props) => {
   const statusServ = props.carrinho.filter((item) => {
@@ -23,31 +22,31 @@ export const DetalheSer = (props) => {
   const paymentMethodsColors = props.servico.paymentMethods.map((item) => {
     if (item === "Pix") {
       return (
-        <Method2 cor={CorRosa} bool={true}>
+        <Method2 key={item} cor={CorRosa} bool={true}>
           Pix
         </Method2>
       );
     } else if (item === "Debito") {
       return (
-        <Method2 cor={"#b388eb"} bool={true}>
+        <Method2 key={item} cor={"#b388eb"} bool={true}>
           Debito
         </Method2>
       );
     } else if (item === "Credito") {
       return (
-        <Method2 cor={CorAmarelo} bool={true}>
+        <Method2 key={item} cor={CorAmarelo} bool={true}>
           Credito
         </Method2>
       );
     } else if (item === "Boleto") {
       return (
-        <Method2 cor={AzulClaro} bool={true}>
+        <Method2 key={item} cor={AzulClaro} bool={true}>
           Boleto
         </Method2>
       );
     } else {
       return (
-        <Method2 cor={CorVerde} bool={true}>
+        <Method2 key={item} cor={CorVerde} bool={true}>
           PayPal
         </Method2>
       );
@@ -63,7 +62,8 @@ export const DetalheSer = (props) => {
         <CaixinhaDetalhes>
           <h1>{props.servico.title}</h1>
           <DivMethods>
-            <p>Formas de pagamento aceitas:</p><p>{paymentMethodsColors}</p>
+            <p>Formas de pagamento aceitas:</p>
+            <div>{paymentMethodsColors}</div>
           </DivMethods>
           <div>
             <p>

@@ -1,14 +1,24 @@
 import React from "react";
-import { ContainerPageSer, } from "./styled";
-import { HeaderContrataSer, ImagemHeader, InputSearch, CampoDePesquisa } from "./styled";
-import { Main, MostraCards } from "./styled";
-import { Footer } from "../components/Footer";
+import {
+  HeaderContrataSer,
+  ContainerPageSer,
+  ImagemHeader,
+  InputSearch,
+  CampoDePesquisa,
+  Main,
+  MostraCards,
+} from "./styled";
 import { Card } from "../components/Card";
 import logo from "../assets/logoHeader2.png";
-import carrinho from "../assets/CarrinhoV.png"
-import {ImgCarrinho, ButtonLimpar} from "../components/styled"
+import carrinho from "../assets/CarrinhoV.png";
+import { ImgCarrinho, ButtonLimpar } from "../components/styled";
 
+let segredinho = 0;
 export const ContrataSer = (props) => {
+  const onClickSegredinho = () => {
+    console.log(segredinho)
+    segredinho++;
+  };
   const MostraCard = props.allJobs
     .filter((item) => {
       if (
@@ -25,24 +35,24 @@ export const ContrataSer = (props) => {
           key={item.id}
           servico={item}
           carrinho={props.carrinho}
-          // title={item.title} price={item.price} dueDate={item.dueDate}
           goCarrinho={props.goCarrinho}
           goDetalheSer={props.goDetalheSer}
           adicionarCarrinho={props.adicionarCarrinho}
+          deleteJob={props.deleteJob}
+          segredinho={segredinho}
         />
       );
     });
   return (
     <ContainerPageSer>
-      <HeaderContrataSer>
-        <ImagemHeader src={logo} onClick={props.goHome}/>
+      <HeaderContrataSer onClick={onClickSegredinho}>
+        <ImagemHeader src={logo} onClick={props.goHome} />
         <InputSearch
-            placeholder="Busca"
-            onChange={props.onChangeSearch}
-            value={props.inputSearch}
-          />
-        <ImgCarrinho onClick={props.goCarrinho} src={carrinho}/>
-        
+          placeholder="Busca"
+          onChange={props.onChangeSearch}
+          value={props.inputSearch}
+        />
+        <ImgCarrinho onClick={props.goCarrinho} src={carrinho} />
       </HeaderContrataSer>
       <Main>
         <CampoDePesquisa>
@@ -66,7 +76,9 @@ export const ContrataSer = (props) => {
             <option>Decrescente</option>
             <option>Prazos</option>
           </select>
-          <ButtonLimpar onClick={props.limparCampos}>Limpar Campos</ButtonLimpar>
+          <ButtonLimpar onClick={props.limparCampos}>
+            Limpar Campos
+          </ButtonLimpar>
         </CampoDePesquisa>
 
         <MostraCards>{MostraCard}</MostraCards>
