@@ -64,5 +64,40 @@ color:#3a0ca3;
 export const ImgCarrinho = styled.img`
 height: 40px;
 `
+export const ButtonLimpar = styled.button `
+ padding: 10px;
+  width: 150px; 
+  border: none;
+  border-radius: 8px;
+  background-color: #cbf3f0 ;
+  color: ${CorRosa};
+`
+export const CardItem = styled.div `
+font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+width: 500px;
+height: 50px;
+display: flex;
+flex-direction: row;
+align-items: center;
+padding: 0 5px;
+justify-content: space-between;
+margin: 10px 0;
+background-color: #a9d6e5;
+border-radius: 5px;
+
+`
+export const ImgLixeira = styled.img`
+height: 30px;
+
+
+`
+export const ButaoRemover = styled.button `
+padding: 10px;
+width: 500px;
+border: none;
+border-radius: 8px;
+background-color: #FF99C8;
+color:#3a0ca3;
+`
 
 ///estilização cards///

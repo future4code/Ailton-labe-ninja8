@@ -3,6 +3,8 @@ import { ContainerPage } from "./styled";
 import { Header } from "./styled";
 import { Main } from "./styled";
 import { Footer } from "../components/Footer";
+import {HeaderContrataSer, ImagemHeader} from "./styled";
+import logo from "../assets/logoHeader2.png"
 
 export const DetalheSer = (props) => {
   const statusServ = props.allJobs.filter((item) => {
@@ -10,10 +12,9 @@ export const DetalheSer = (props) => {
   });
   return (
     <ContainerPage>
-      <Header>
-        <button onClick={props.goHome}>Home</button>
-        <button onClick={props.goCarrinho}>Carrinho</button>
-      </Header>
+     <HeaderContrataSer>
+        <ImagemHeader src={logo} onClick={props.goHome}/>
+        </HeaderContrataSer>
       <Main>
         <h1>Detalhe Serviço</h1>
         <div>
