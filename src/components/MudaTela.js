@@ -66,6 +66,7 @@ export default class MudaTela extends React.Component {
       case "ContrataSer":
         return (
           <ContrataSer
+            carrinho={this.props.carrinho}
             goHome={this.goHome}
             goCarrinho={this.goCarrinho}
             goDetalheSer={this.goDetalheSer}
@@ -87,6 +88,7 @@ export default class MudaTela extends React.Component {
           <DetalheSer
             allJobs={this.props.allJobs}
             goHome={this.goHome}
+            carrinho={this.props.carrinho}
             goCarrinho={this.goCarrinho}
             goContrataSer={this.goContrataSer}
             servico={this.state.produtoSelecionado}

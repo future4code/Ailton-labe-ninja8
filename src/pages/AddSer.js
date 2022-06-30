@@ -20,13 +20,7 @@ import {
   InputServQuatro,
 } from "./styled";
 import { Footer } from "../components/Footer";
-import {
-  CorRosa,
-  CorVerde,
-  CorAmarelo,
-  AzulClaro,
-  AzulEscuro,
-} from "../constants/cores";
+import { CorRosa, CorVerde, CorAmarelo, AzulClaro } from "../constants/cores";
 import logo from "../assets/logoHeader2.png";
 
 export const AddSer = (props) => {
@@ -96,20 +90,8 @@ export const AddSer = (props) => {
             {props.AvisoErro}
             {props.AvisoOK}
           </p>
-
         </ContainerAddServ>
       </MainAddServ>
-     
     </ContainerPage>
   );
 };
-
-// onChangeTitle={this.props.onChangeTitle}
-// onChangeDescription={this.props.onChangeDescription}
-// onChangePrice={this.props.onChangePrice}
-// onChangeDate={this.props.onChangeDate}
-// inputTitle={this.props.inputTitle}
-// inputDescription={this.props.inputDescription}
-// inputPrice={this.props.inputPrice}
-// paymentMethods={this.props.paymentMethods}
-// onClickPayments={this.props.onClickPayments}

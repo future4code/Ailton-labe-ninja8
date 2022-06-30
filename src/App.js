@@ -27,7 +27,19 @@ export default class App extends Component {
         carrinho: JSON.parse(localStorage.getItem("carrinho")),
       });
     }
+    // this.verificaCarrinho();
   }
+
+  // verificaCarrinho = async () => {
+  //   await this.getAllJobs();
+  //   console.log(this.state.allJobs.length)
+  //   if (this.state.carrinho.length === 0) {
+  //     for (const item of this.state.allJobs) {
+  //       console.log("opa");
+  //       this.updateJob(item, false);
+  //     }
+  //   }
+  // };
 
   componentDidUpdate() {
     localStorage.setItem("carrinho", JSON.stringify(this.state.carrinho));
@@ -163,20 +175,21 @@ export default class App extends Component {
     }
   };
 
-  updateJob = async (item, troca) => {
-    try {
-      const body = {
-        taken: troca,
-      };
-      await axios.post(this.state.baseURL + `/jobs/${item.id}`, body, {
-        headers: {
-          Authorization: this.state.keyAPI,
-        },
-      });
-    } catch (error) {
-      console.log(error.message);
-    }
-  };
+  // updateJob = async (item, troca) => {
+  //   try {
+  //     const body = {
+  //       taken: troca,
+  //     };
+  //     await axios.post(this.state.baseURL + `/jobs/${item.id}`, body, {
+  //       headers: {
+  //         Authorization: this.state.keyAPI,
+  //       },
+  //     });
+  //   } catch (error) {
+  //     console.log(error.message);
+  //   }
+  // };
+  // não estamos usando pois não parece servir para os objetivos pedidos ou explicados pelo enunciado, ao meu entendimento (Paulo)
 
   ////////// API //////////
 
@@ -250,7 +263,7 @@ export default class App extends Component {
   adicionarCarrinho = async (item) => {
     let novoCarrinho = [...this.state.carrinho];
     novoCarrinho.push(item);
-    await this.updateJob(item, true);
+    // await this.updateJob(item, true);
     await this.getAllJobs();
     this.setState({ carrinho: novoCarrinho });
   };
@@ -269,7 +282,7 @@ export default class App extends Component {
         return item;
       }
     });
-    await this.updateJob(itemRemovido, false);
+    // await this.updateJob(itemRemovido, false);
     await this.getAllJobs();
     this.setState({
       carrinho: novoCarrinho,
@@ -277,9 +290,9 @@ export default class App extends Component {
   };
 
   removerTodoCarrinho = async (comprar) => {
-    for (const item of this.state.carrinho) {
-      await this.updateJob(item, false);
-    }
+    // for (const item of this.state.carrinho) {
+    //   await this.updateJob(item, false);
+    // }
     await this.getAllJobs();
     this.setState({
       carrinho: [],

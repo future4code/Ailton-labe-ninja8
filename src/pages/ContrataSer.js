@@ -24,6 +24,7 @@ export const ContrataSer = (props) => {
         <Card
           key={item.id}
           servico={item}
+          carrinho={props.carrinho}
           // title={item.title} price={item.price} dueDate={item.dueDate}
           goCarrinho={props.goCarrinho}
           goDetalheSer={props.goDetalheSer}

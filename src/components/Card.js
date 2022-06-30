@@ -4,6 +4,9 @@ import Carrinho1 from '../assets/CarrinhoV.png'
 import Carrinho2 from '../assets/CarrinhoC.png'
 
 export const Card = (props) => {
+  const statusServ = props.carrinho.filter((item) => {
+    return item.id === props.servico.id;
+  });
   return (
     <CardServico>
       <CardTitulo>
@@ -14,7 +17,7 @@ export const Card = (props) => {
         <p>R$ {props.servico.price}</p>
       </div>
       <ButaoCard>
-        {props.servico.taken === false ? (
+        {statusServ.length === 0 ? (
           <ImgCarrinho src={Carrinho1}
             onClick={() => {
               props.adicionarCarrinho(props.servico);
