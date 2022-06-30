@@ -1,9 +1,10 @@
 import React from "react";
-import { ContainerPageSer } from "./styled";
-import { Header } from "./styled";
-import { Main } from "./styled";
+import { ContainerPageSer,  } from "./styled";
+import { HeaderContrataSer, ImagemHeader, InputSearch, CampoDePesquisa } from "./styled";
+import { Main, MostraCards } from "./styled";
 import { Footer } from "../components/Footer";
 import { Card } from "../components/Card";
+import logo from "../assets/logoHeader2.png";
 
 export const ContrataSer = (props) => {
   const MostraCard = props.allJobs
@@ -30,18 +31,17 @@ export const ContrataSer = (props) => {
     });
   return (
     <ContainerPageSer>
-      <Header>
-        <button onClick={props.goHome}>Home</button>
-        <button onClick={props.goCarrinho}>Carrinho</button>
-      </Header>
-      <Main>
-        <div>
-          <h1>Contrata Serviço</h1>
-          <input
+      <HeaderContrataSer>
+        <ImagemHeader src={logo} onClick={props.goHome}/>
+        <InputSearch
             placeholder="Busca"
             onChange={props.onChangeSearch}
             value={props.inputSearch}
           />
+        <button onClick={props.goCarrinho}>Carrinho</button>
+      </HeaderContrataSer>
+      <Main>
+        <CampoDePesquisa>
           <input
             min={0}
             placeholder="Valor Minimo"
@@ -63,9 +63,9 @@ export const ContrataSer = (props) => {
             <option>Prazos</option>
           </select>
           <button onClick={props.limparCampos}>Limpar Campos</button>
-        </div>
+        </CampoDePesquisa>
 
-        <div>{MostraCard}</div>
+        <MostraCards>{MostraCard}</MostraCards>
       </Main>
       <Footer />
     </ContainerPageSer>

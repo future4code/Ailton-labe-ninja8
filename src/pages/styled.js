@@ -95,6 +95,21 @@ export const Header = styled.header`
   width: 100%;
   height: 10vh;
 `;
+
+export const HeaderContrataSer = styled.header`
+  width: 100%;
+  height: 10vh;
+  background-color: ${CorVerde};
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  height: 10vh;
+  padding: 0 20px;
+`;
+
 export const HeaderAddServ = styled.header`
 padding: 0 20px;
   display: flex;
@@ -107,9 +122,7 @@ padding: 0 20px;
 `;
 
 export const ImagemHeader = styled.img`
-  height: 60%;
-  margin-top: 17px;
-  margin-left: 10px;
+  height: 80%;
 `;
 
 export const MainAddServ = styled.main`
@@ -122,7 +135,8 @@ export const MainAddServ = styled.main`
 `;
 export const Main = styled.main`
   width: 100%;
-  height: 80vh;
+  height: 100%;
+  background-color: #feeafa;
 `;
 export const MainHome = styled.main`
   width: 100%;
@@ -215,3 +229,34 @@ export const InputServQuatro = styled.input`
   border: none;
   border-radius: 5px;
 `;
+
+export const InputSearch = styled.input`
+padding: 12px 50px;
+border: none;
+border-radius: 8px;
+`
+
+export const MostraCards = styled.div`
+width: 100%;
+height: 100%;
+display: flex;
+flex-wrap: wrap;
+justify-content: center;
+gap: 18px;
+padding: 25px 10px;
+`
+
+export const CampoDePesquisa = styled.div`
+display: flex;
+justify-content: center;
+align-items: center;
+padding-top: 25px;
+gap: 8px;
+input, select{
+  padding: 10px;
+  width: 20%; 
+  border: none;
+  border-radius: 8px;
+}
+`
+
