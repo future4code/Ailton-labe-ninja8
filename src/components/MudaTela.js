@@ -85,6 +85,7 @@ export default class MudaTela extends React.Component {
       case "DetalheSer":
         return (
           <DetalheSer
+            allJobs={this.props.allJobs}
             goHome={this.goHome}
             goCarrinho={this.goCarrinho}
             goContrataSer={this.goContrataSer}
