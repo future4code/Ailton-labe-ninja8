@@ -36,6 +36,8 @@ export default class MudaTela extends React.Component {
       case "Home":
         return (
           <Home
+            onClickMostraMenu={this.props.onClickMostraMenu}
+            mostraMenu={this.props.mostraMenu}
             goAddSer={this.goAddSer}
             goContrataSer={this.goContrataSer}
             goCarrinho={this.goCarrinho}
