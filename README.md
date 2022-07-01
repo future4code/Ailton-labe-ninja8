@@ -1,4 +1,5 @@
 >>  **Projeto LabeNinjas**
+>>  Link do projeto: 
 
 ![image](https://user-images.githubusercontent.com/102835599/176256754-a3a22cf1-c028-459b-bc36-66c74bfa3dd5.png)
 
@@ -36,6 +37,11 @@ A paleta de cores escolhida pelo time foi:(https://coolors.co/palette/ef476f-ffd
 **Funcionalidades extras:**
 - Sobre Nós
 - Botão para deletar serviços oferecidos escondido (cinco cliques, mudança de página e voltar à lista)
+
+**Desafios:**
+- Responsividade
+- Mantém itens no carrinho após atualização da página
+- Não permite que o mesmo item seja adicionado mais de uma vez
 
  
 [LabeNinjas.drawio.pdf](https://github.com/future4code/Ailton-labe-ninja8/files/9001459/LabeNinjas.drawio.pdf)
