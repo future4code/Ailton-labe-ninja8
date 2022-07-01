@@ -16,6 +16,7 @@ export const CarrinhoVazio = styled.h2`
 export const ContainerPage = styled.div`
   width: 100%;
   height: 100%;
+  text-align: center;
 `;
 
 export const ImgHeaderAdd = styled.img`
@@ -42,6 +43,9 @@ export const ContainerAddServ = styled.div`
     height: 28px;
     padding-left: 12px;
   }
+  @media screen and (max-width: 480px) {
+    width: 340px;
+  }
 `;
 
 export const Method1 = styled.p`
@@ -51,11 +55,11 @@ export const Method1 = styled.p`
 `;
 export const Method2 = styled.p`
   background-color: ${(props) => (props.bool === true ? props.cor : "none")};
-  padding: 3px;
+  padding: 2px 4px;
   border-radius: 6px;
   text-align: center;
   display: inline;
-  margin: 4px;
+  margin: 2px;
 `;
 
 export const DivMethods = styled.div`
@@ -85,6 +89,7 @@ export const ButtonAdd = styled.button`
   text-shadow: 0.8px 0.8px 2px black;
   font-weight: 900;
   font-size: 18px;
+  cursor: pointer;
   font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
     "Lucida Sans", Arial, sans-serif;
 `;
@@ -148,6 +153,9 @@ export const HeaderAddServ = styled.header`
 export const ImagemHeader = styled.img`
   height: 80%;
   cursor: pointer;
+  @media screen and (max-width: 480px) {
+    height: 60%;
+  }
 `;
 
 export const MainAddServ = styled.main`
@@ -169,6 +177,7 @@ export const MainDetalhe = styled.main`
 `;
 export const Main = styled.main`
   width: 100%;
+  min-height: 90vh;
   height: 100%;
   background-color: #feeafa;
 `;
@@ -180,6 +189,37 @@ export const MainHome = styled.main`
   flex-direction: row;
   justify-content: center;
   align-items: center;
+  gap: 40px;
+  @media screen and (max-width: 1280px) {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+    .Logo {
+      grid-area: 3/1/4/6;
+      width: 80vw;
+      margin: 0 auto;
+    }
+  }
+  @media screen and (max-width: 380px) {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(7, 1fr);
+    .Logo {
+      grid-area: 4/1/5/6;
+      width: 80vw;
+      margin: 0 auto;
+    }
+  }
+  /* @media screen and (max-width: 810px) {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+    .Logo {
+      grid-area: 3/1/4/6;
+      width: 80vw;
+      margin: 0 auto;
+    }
+  } */
 `;
 
 export const Servico = styled.img`
@@ -192,6 +232,50 @@ export const Servico = styled.img`
   :hover {
     border-radius: 100px;
     transition: 0.7s;
+  }
+  @media screen and (min-width: 761px) and (max-width: 1280px) {
+    grid-area: 4/2/5/3;
+    margin: 0 auto;
+  }
+  @media screen and (min-width: 381px) and (max-width: 760px) {
+    grid-area: 4/2/5/3;
+    margin: 0 auto;
+    height: 150px;
+    width: 150px;
+  }
+  @media screen and (max-width: 380px) {
+    grid-area: 3/1/4/6;
+    margin: 0 auto;
+    height: 150px;
+    width: 150px;
+  }
+`;
+export const Servico2 = styled.img`
+  margin-top: 220px;
+  height: 200px;
+  width: 200px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.7s;
+  :hover {
+    border-radius: 100px;
+    transition: 0.7s;
+  }
+  @media screen and (min-width: 761px) and (max-width: 1280px) {
+    grid-area: 4/4/5/5;
+    margin: 0 auto;
+  }
+  @media screen and (min-width: 381px) and (max-width: 760px) {
+    grid-area: 4/4/5/5;
+    margin: 0 auto;
+    height: 150px;
+    width: 150px;
+  }
+  @media screen and (max-width: 380px) {
+    grid-area: 5/1/6/6;
+    margin: 0 auto;
+    height: 150px;
+    width: 150px;
   }
 `;
 
@@ -232,6 +316,7 @@ export const ServButton = styled.button`
   margin-left: 5px;
   border: none;
   border-radius: 5px;
+  cursor: pointer;
 `;
 export const InputServ = styled.input`
   background-color: ${CorAmarelo};
@@ -268,6 +353,9 @@ export const InputSearch = styled.input`
   padding: 12px 50px;
   border: none;
   border-radius: 8px;
+  @media screen and (max-width: 480px) {
+    width: 200px;
+  }
 `;
 
 export const MostraCards = styled.div`
@@ -286,10 +374,11 @@ export const CampoDePesquisa = styled.div`
   align-items: center;
   padding-top: 25px;
   gap: 8px;
+  flex-wrap: wrap;
   input,
   select {
     padding: 10px;
-    width: 20%;
+    width: 300px;
     border: none;
     border-radius: 8px;
   }
@@ -328,6 +417,7 @@ export const Titulo = styled.h1`
 
 export const CaixinhaDetalhes = styled.div`
   width: 50%;
+  min-width: 340px;
   height: 65%;
   border-radius: 16px;
   display: flex;
@@ -335,15 +425,18 @@ export const CaixinhaDetalhes = styled.div`
   justify-content: space-around;
   align-items: center;
   background-color: #f2b5d4;
-
   h1 {
     font-size: 47px;
     color: #758bfd;
   }
-
   p {
     font-size: 20px;
     color: ${AzulEscuro};
+  }
+  @media screen and (max-width: 480px) {
+    h1 {
+      font-size: 40px;
+    }
   }
 `;
 /* #3d348b; */
@@ -368,44 +461,97 @@ export const ButtonVoltar = styled.button`
 `;
 
 export const SectionNos = styled.section`
-width:100%;
-height:100vh;
-`
+  width: 100%;
+  height: 100vh;
+`;
 
 export const Sobre = styled.div`
-background-image: url(${inclusao});
-background-size:cover;
-height:100%;
-display:flex;
-flex-direction:column;
-
-`
+  background-image: url(${inclusao});
+  background-size: cover;
+  background-position: center;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+`;
 
 export const Descricao = styled.div`
-height:40%;
-width:80%;
-padding: 20px 30px;
-/* margin:0 auto; */
-flex-grow:25;
+  height: 40%;
+  width: 80%;
+  padding: 20px 30px;
+  /* margin:0 auto; */
+  flex-grow: 25;
 
-h1{
-  font-size:40px;
-  color:#000814;
- 
-}
-`
+  h1 {
+    font-size: 40px;
+    color: #000814;
+  }
+  @media screen and (max-width: 480px) {
+    width: 100%;
+    h1 {
+      font-size: 28px;
+    }
+  }
+`;
+
+export const ButtonMenu = styled.div`
+  position: fixed;
+  left: 20px;
+  top: 20px;
+  rotate: 90deg;
+  border-radius: 22px;
+  padding: 16px 12px;
+  background-color: #eb6d8b;
+  color: ${AzulEscuro};
+  font-weight: 500;
+  font-size: 20px;
+  font-family: Arial, Helvetica, sans-serif;
+  :hover {
+    background-color: pink;
+  }
+`;
+
+export const Menu = styled.div`
+  position: fixed;
+  left: 28px;
+  top: 70px;
+  width: 120px;
+  /* background-color: pink; */
+  color: ${AzulEscuro};
+  font-size: 18px;
+  text-align: start;
+  a{
+    text-decoration: none;
+    color: unset;
+  }
+  li {
+    background-color: #eb6d8b;
+    list-style: none;
+    padding: 8px;
+    margin-top: 4px;
+    border-radius: 8px;
+    :hover {
+      background-color: pink;
+    }
+  }
+`;
 
 export const FraseFinal = styled.div`
-width:100%;
-height:20%;
-flex-grow:1;
-display:flex;
-justify-content:center;
-
-p{
-  font-size:35px;
-  font-weight:bold;
-  color:#000814;
-  text-shadow:1px 1px 1px white;
-}
-`
+  width: 100%;
+  height: 20%;
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  p {
+    font-size: 35px;
+    font-weight: bold;
+    color: #000814;
+    text-shadow: 1px 1px 1px white;
+  }
+  @media screen and (max-width: 480px) {
+    width: 100%;
+    flex-grow: 2;
+    p {
+      font-size: 30px;
+    }
+  }
+`;

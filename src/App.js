@@ -18,6 +18,7 @@ export default class App extends Component {
     carrinho: [],
     AvisoErro: "",
     AvisoOK: "",
+    mostraMenu:false,
   };
 
   componentDidMount() {
@@ -268,6 +269,12 @@ export default class App extends Component {
 
   /// Funções onClick ///
 
+  onClickMostraMenu = () =>{
+    this.setState({
+      mostraMenu: !this.state.mostraMenu
+    })
+  }
+
   onClickPayments = (index) => {
     let array = [...this.state.paymentMethods];
     array[index] = !array[index];
@@ -349,6 +356,8 @@ export default class App extends Component {
           AvisoErro={this.state.AvisoErro}
           AvisoOK={this.state.AvisoOK}
           deleteJob={this.deleteJob}
+          mostraMenu={this.state.mostraMenu}
+          onClickMostraMenu={this.onClickMostraMenu}
         />
       </div>
     );
