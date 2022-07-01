@@ -33,6 +33,9 @@ A paleta de cores escolhida pelo time foi:(https://coolors.co/palette/ef476f-ffd
 - Confirmação de compra
 - Possibilidade de deletar serviço escolhido
  
+**Funcionalidades extras:**
+- Sobre Nós
+- Botão para deletar serviços oferecidos escondido (cinco cliques, mudança de página e voltar à lista)
 
  
 [LabeNinjas.drawio.pdf](https://github.com/future4code/Ailton-labe-ninja8/files/9001459/LabeNinjas.drawio.pdf)
