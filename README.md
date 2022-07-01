@@ -1,7 +1,7 @@
 >>  **Projeto LabeNinjas**
 
 
-> Link do projeto: 
+> Link do projeto: https://substantial-cherry.surge.sh/ 
 
 ![image](https://user-images.githubusercontent.com/102835599/176256754-a3a22cf1-c028-459b-bc36-66c74bfa3dd5.png)
 
