@@ -11,11 +11,9 @@ export default class MudaTela extends React.Component {
     tela: "Home",
     produtoSelecionado: {},
   };
-
   goHome = () => {
     this.setState({ tela: "Home" });
   };
-
   goAddSer = () => {
     this.setState({ tela: "AddSer" });
   };
@@ -26,11 +24,9 @@ export default class MudaTela extends React.Component {
   goDetalheSer = (valor) => {
     this.setState({ tela: "DetalheSer", produtoSelecionado: valor });
   };
-
   goCarrinho = () => {
     this.setState({ tela: "Carrinho" });
   };
-
   escolheTela = () => {
     switch (this.state.tela) {
       case "Home":

@@ -16,7 +16,6 @@ import { ImgCarrinho, ButtonLimpar } from "../components/styled";
 let segredinho = 0;
 export const ContrataSer = (props) => {
   const onClickSegredinho = () => {
-    console.log(segredinho)
     segredinho++;
   };
   const MostraCard = props.allJobs
@@ -80,7 +79,6 @@ export const ContrataSer = (props) => {
             Limpar Campos
           </ButtonLimpar>
         </CampoDePesquisa>
-
         <MostraCards>{MostraCard}</MostraCards>
       </Main>
     </ContainerPageSer>

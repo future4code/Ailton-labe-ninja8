@@ -11,15 +11,12 @@ import {
   ImgHeaderAdd,
 } from "./styled";
 import {
-  Header,
-  HomeButton,
   ServButton,
   InputServ,
   InputServTres,
   InputServDois,
   InputServQuatro,
 } from "./styled";
-import { Footer } from "../components/Footer";
 import { CorRosa, CorVerde, CorAmarelo, AzulClaro } from "../constants/cores";
 import logo from "../assets/logoHeader2.png";
 

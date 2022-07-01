@@ -1,7 +1,13 @@
 import React from "react";
-import { CardServico, ButaoCard, CardTitulo, ButaoCards, ImgCarrinho} from "./styled";
-import Carrinho1 from '../assets/CarrinhoV.png'
-import Carrinho2 from '../assets/CarrinhoC.png'
+import {
+  CardServico,
+  ButaoCard,
+  CardTitulo,
+  ButaoCards,
+  ImgCarrinho,
+} from "./styled";
+import Carrinho1 from "../assets/CarrinhoV.png";
+import Carrinho2 from "../assets/CarrinhoC.png";
 
 export const Card = (props) => {
   const statusServ = props.carrinho.filter((item) => {
@@ -18,32 +24,31 @@ export const Card = (props) => {
       </div>
       <ButaoCard>
         {statusServ.length === 0 ? (
-          <ImgCarrinho src={Carrinho1}
+          <ImgCarrinho
+            src={Carrinho1}
             onClick={() => {
               props.adicionarCarrinho(props.servico);
             }}
           />
-         
         ) : (
-          <ImgCarrinho src={Carrinho2}/>
+          <ImgCarrinho src={Carrinho2} />
         )}
-        {props.segredinho >= 5 &&
-        <ButaoCards
-          onClick={() => {
-            props.deleteJob(props.servico.id);
-          }}
-        >
-          DELETAR
-        </ButaoCards>        
-        }
-
+        {props.segredinho >= 5 && (
+          <ButaoCards
+            onClick={() => {
+              props.deleteJob(props.servico.id);
+            }}
+          >
+            DELETAR
+          </ButaoCards>
+        )}
         <ButaoCards
           onClick={() => {
             props.goDetalheSer(props.servico);
           }}
         >
           Ver detalhes
-        </ButaoCards>        
+        </ButaoCards>
       </ButaoCard>
     </CardServico>
   );

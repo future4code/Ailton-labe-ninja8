@@ -56,7 +56,7 @@ export const Home = (props) => {
           </FraseFinal>
         </Sobre>
       </SectionNos>
-      <Footer/>
+      <Footer />
     </ContainerPage>
   );
 };

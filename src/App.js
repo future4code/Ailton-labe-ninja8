@@ -18,7 +18,7 @@ export default class App extends Component {
     carrinho: [],
     AvisoErro: "",
     AvisoOK: "",
-    mostraMenu:false,
+    mostraMenu: false,
   };
 
   componentDidMount() {
@@ -28,37 +28,13 @@ export default class App extends Component {
         carrinho: JSON.parse(localStorage.getItem("carrinho")),
       });
     }
-    // this.verificaCarrinho();
   }
-
-  // verificaCarrinho = async () => {
-  //   await this.getAllJobs();
-  //   console.log(this.state.allJobs.length)
-  //   if (this.state.carrinho.length === 0) {
-  //     for (const item of this.state.allJobs) {
-  //       console.log("opa");
-  //       this.updateJob(item, false);
-  //     }
-  //   }
-  // };
 
   componentDidUpdate() {
     localStorage.setItem("carrinho", JSON.stringify(this.state.carrinho));
   }
 
   ////////// API //////////
-
-  // createAPIKey = () => {
-  //   try {
-  //     const body = {
-  //       name: "Grupo 08",
-  //     };
-  //     const response = axios.post(`${this.state.baseURL}/auth`, body);
-  //     console.log(response);
-  //   } catch (error) {
-  //     console.log(error.message);
-  //   }
-  // };
 
   getAllJobs = async () => {
     try {
@@ -182,22 +158,6 @@ export default class App extends Component {
     }
   };
 
-  // updateJob = async (item, troca) => {
-  //   try {
-  //     const body = {
-  //       taken: troca,
-  //     };
-  //     await axios.post(this.state.baseURL + `/jobs/${item.id}`, body, {
-  //       headers: {
-  //         Authorization: this.state.keyAPI,
-  //       },
-  //     });
-  //   } catch (error) {
-  //     console.log(error.message);
-  //   }
-  // };
-  // não estamos usando pois não parece servir para os objetivos pedidos ou explicados pelo enunciado, ao meu entendimento (Paulo)
-
   ////////// API //////////
 
   /// Funções onChange ///
@@ -269,11 +229,11 @@ export default class App extends Component {
 
   /// Funções onClick ///
 
-  onClickMostraMenu = () =>{
+  onClickMostraMenu = () => {
     this.setState({
-      mostraMenu: !this.state.mostraMenu
-    })
-  }
+      mostraMenu: !this.state.mostraMenu,
+    });
+  };
 
   onClickPayments = (index) => {
     let array = [...this.state.paymentMethods];
@@ -284,7 +244,6 @@ export default class App extends Component {
   adicionarCarrinho = async (item) => {
     let novoCarrinho = [...this.state.carrinho];
     novoCarrinho.push(item);
-    // await this.updateJob(item, true);
     await this.getAllJobs();
     this.setState({ carrinho: novoCarrinho });
   };
@@ -303,7 +262,6 @@ export default class App extends Component {
         return item;
       }
     });
-    // await this.updateJob(itemRemovido, false);
     await this.getAllJobs();
     this.setState({
       carrinho: novoCarrinho,
@@ -311,9 +269,6 @@ export default class App extends Component {
   };
 
   removerTodoCarrinho = async (comprar) => {
-    // for (const item of this.state.carrinho) {
-    //   await this.updateJob(item, false);
-    // }
     await this.getAllJobs();
     this.setState({
       carrinho: [],

@@ -72,7 +72,6 @@ export const DetalheSer = (props) => {
             </p>
           </div>
           <p>{props.servico.description}</p>
-
           <BotoesDetalhes>
             <ButtonVoltar onClick={props.goContrataSer}>
               Voltar para a lista

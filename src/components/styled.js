@@ -1,10 +1,6 @@
 import styled from "styled-components";
 import {
   CorRosa,
-  CorVerde,
-  CorAmarelo,
-  AzulClaro,
-  AzulEscuro,
 } from "../constants/cores";
 
 export const ContainerMudaTela = styled.div`
@@ -91,7 +87,6 @@ export const CardServico = styled.div`
   :hover {
     border: 2px solid #ff99c8;
   }
-  /* opacity: 80%; */
 `;
 
 export const ButaoCard = styled.div`

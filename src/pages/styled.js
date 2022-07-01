@@ -210,16 +210,6 @@ export const MainHome = styled.main`
       margin: 0 auto;
     }
   }
-  /* @media screen and (max-width: 810px) {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    grid-template-rows: repeat(6, 1fr);
-    .Logo {
-      grid-area: 3/1/4/6;
-      width: 80vw;
-      margin: 0 auto;
-    }
-  } */
 `;
 
 export const Servico = styled.img`
@@ -336,7 +326,6 @@ export const InputServDois = styled.textarea`
   border-radius: 5px;
 `;
 export const InputServTres = styled.input`
-  //.attrs({ type: 'number' })
   background-color: ${AzulClaro};
   margin: 5px;
   border: none;
@@ -439,7 +428,6 @@ export const CaixinhaDetalhes = styled.div`
     }
   }
 `;
-/* #3d348b; */
 
 export const BotoesDetalhes = styled.div`
   width: 70%;
@@ -519,7 +507,7 @@ export const Menu = styled.div`
   color: ${AzulEscuro};
   font-size: 18px;
   text-align: start;
-  a{
+  a {
     text-decoration: none;
     color: unset;
   }

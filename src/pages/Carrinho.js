@@ -1,8 +1,6 @@
 import React from "react";
 import { ContainerPage, CarrinhoVazio } from "./styled";
-import { Header } from "./styled";
 import { MainCarrinho } from "./styled";
-import { Footer } from "../components/Footer";
 import { CardCarrinho } from "../components/CardCarrinho";
 import { HeaderContrataSer, ImagemHeader } from "./styled";
 import logo from "../assets/logoHeader2.png";
@@ -13,7 +11,6 @@ export const Carrinho = (props) => {
   let soma = 0;
   const MostraItemCarrinho = props.carrinho.map((item) => {
     soma += item.price;
-
     return (
       <CardCarrinho
         key={item.id}
@@ -22,7 +19,6 @@ export const Carrinho = (props) => {
       />
     );
   });
-
   return (
     <ContainerPage>
       <HeaderContrataSer>
