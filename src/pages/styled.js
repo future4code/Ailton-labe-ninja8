@@ -497,7 +497,7 @@ export const ButtonMenu = styled.div`
   position: fixed;
   left: 20px;
   top: 20px;
-  rotate: 90deg;
+  transform: rotate(90deg);
   border-radius: 22px;
   padding: 16px 12px;
   background-color: #eb6d8b;
