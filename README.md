@@ -41,7 +41,7 @@ A paleta de cores escolhida pelo time foi:(https://coolors.co/palette/ef476f-ffd
 - Botão para deletar serviços oferecidos escondido (cinco cliques, mudança de página e voltar à lista)
 
 **Desafios:**
-- Responsividade
+- Responsividade (tablets e telefones)
 - Mantém itens no carrinho após atualização da página
 - Não permite que o mesmo item seja adicionado mais de uma vez
 
