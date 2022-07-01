@@ -14,8 +14,48 @@ max-width:100%;
 `
 
 export const ContainerFooter = styled.div`
-height: 10vh;
+background-color:#efc3e6;
+min-height: 40vh;
 max-width:100%;
+display:flex;
+justify-content:space-between;
+padding: 0 15px;
+
+a{
+    text-decoration:none;
+    color:unset;
+}
+`
+
+export const Dev = styled.div`
+display:flex;
+flex-direction:row;
+padding-top:10px;
+a{
+display:flex;
+align-items:center;
+gap:8px;
+}
+`
+export const Info = styled.div`
+display:flex;
+flex-direction: column;
+gap:15px;
+padding:15px;
+`
+export const Redes = styled.div `
+display:flex;
+align-items:center;
+justify-content:center;
+gap:8px;
+padding-top:10px;
+img{
+    width:40px;
+    height:40px;
+}
+`
+export const RedesT = styled.p `
+padding-top:15px;
 `
 
 ///estilização cards///

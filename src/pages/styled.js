@@ -6,6 +6,7 @@ import {
   AzulClaro,
   AzulEscuro,
 } from "../constants/cores";
+import inclusao from "../assets/uniao.jpg";
 
 export const CarrinhoVazio = styled.h2`
   margin-top: 100px;
@@ -365,3 +366,46 @@ export const ButtonVoltar = styled.button`
   color: ${CorRosa};
   margin-top: 8px;
 `;
+
+export const SectionNos = styled.section`
+width:100%;
+height:100vh;
+`
+
+export const Sobre = styled.div`
+background-image: url(${inclusao});
+background-size:cover;
+height:100%;
+display:flex;
+flex-direction:column;
+
+`
+
+export const Descricao = styled.div`
+height:40%;
+width:80%;
+padding: 20px 30px;
+/* margin:0 auto; */
+flex-grow:25;
+
+h1{
+  font-size:40px;
+  color:#000814;
+ 
+}
+`
+
+export const FraseFinal = styled.div`
+width:100%;
+height:20%;
+flex-grow:1;
+display:flex;
+justify-content:center;
+
+p{
+  font-size:35px;
+  font-weight:bold;
+  color:#000814;
+  text-shadow:1px 1px 1px white;
+}
+`
