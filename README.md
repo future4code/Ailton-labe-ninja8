@@ -1,70 +1,55 @@
-# Getting Started with Create React App
+>>  **Projeto LabeNinjas**
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+> Link do projeto: https://substantial-cherry.surge.sh/ 
 
-In the project directory, you can run:
+![image](https://user-images.githubusercontent.com/102835599/176256754-a3a22cf1-c028-459b-bc36-66c74bfa3dd5.png)
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Criamos os arquivos de forma componetizada para facilitar a organização do grupo, segundo os detalhes mostrados no fluxograma (link abaixo).
+Total de Telas: Home, Cadastro de Serviço, Detalhes do Serviço, Lista de Serviços e Carrinho. 
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+A paleta de cores escolhida pelo time foi:(https://coolors.co/palette/ef476f-ffd166-06d6a0-118ab2-073b4c) 
 
-### `npm test`
+**|| Detalhes e Funcionalidades:**
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+**Home conta com:**
+ - Botão de Cadastro de Serviços;
+ - Botão de Lista de Serviços;
+ - Logo da Marca;
 
-### `npm run build`
+**Cadastro de Serviços conta com:**
+ - Box de inputs para inserir as inforações a serem oferecidas, formas de pagamento aceitas, e data de disponibilidade do serviço
+ - Link direto para a lista de serviços oferecidos
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+**Serviços Oferecidos conta com:**
+ - Cards em listas, mostrando todos os serviços cadastrados
+ - Link direto para o Carrinho e Detalhes de cada serviço
+ 
+**Detalhes do Serviço conta com:**
+ - Descrição fornecida do serviço, formas de pagamento aceitas, disponibilidade do serviço
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+**Carrinho conta com:**
+ - Box com serviços escolhidos
+- Valor unitário
+- Valor total da compra (Caso mais de um serviço seja escolhido)
+- Confirmação de compra
+- Possibilidade de deletar serviço escolhido
+ 
+**Funcionalidades extras:**
+- Sobre Nós
+- Botão para deletar serviços oferecidos escondido (cinco cliques, mudança de página e voltar à lista)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+**Desafios:**
+- Responsividade (tablets e telefones)
+- Mantém itens no carrinho após atualização da página
+- Não permite que o mesmo item seja adicionado mais de uma vez
 
-### `npm run eject`
+ 
+[LabeNinjas.drawio.pdf](https://github.com/future4code/Ailton-labe-ninja8/files/9001459/LabeNinjas.drawio.pdf)
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+**Desenvolvedores Envolvidos:**
+- João Gabriel Sales
+- Mayara Costa
+- Myllena Moreira
+- Paulo Henrique Correa da Silva
